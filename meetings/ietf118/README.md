@@ -10,10 +10,10 @@ For remote participation, we are using IETF infrastructure for side-meetings: We
 Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 
 - [Administrativia (note well, mailing list, GitHub, website)](ietf118-deepspace-blanchet.pdf), Marc Blanchet
-- [Recap of architecture](ietf118-deepspace-blanchet.pdf), Marc Blanchet
+- [Proposed Architecture in One Slide](ietf118-deepspace-blanchet.pdf), Marc Blanchet
 - QUIC for deep space: Christian Huitema
 - QUIC deep space analysis project: Juan Fraire
-- TAPS, careful-resume+bdp: Émile Stéphan
+- TAPS, careful-resume+bdp: Émile Stephan
 - QUIC-FEC-Additional-Addresses: François Michel, Maxime Piraud
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
