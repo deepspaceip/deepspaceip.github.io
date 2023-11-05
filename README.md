@@ -16,9 +16,10 @@ Discussions are happening on the deepspace IETF mailing list.
 - [QUIC in Space](https://datatracker.ietf.org/doc/draft-huitema-quic-in-space/)
 - [Domain Name System in Mostly Isolated Networks](https://datatracker.ietf.org/doc/draft-blanchet-dns-isolated-networks)
 
-# Related Documents
+# Related Work
 - [Convergence of Congestion Control from Retained State](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-careful-resume/)
 - [BDP_Frame Extension](https://datatracker.ietf.org/doc/draft-kuhn-quic-bdpframe-extension/)
+- [Time-Variant Routing IETF working group](https://datatracker.ietf.org/wg/tvr/about/)
 
 # Contact
 - [Marc Blanchet](mailto:marc.blanchet@viagenie.ca)
