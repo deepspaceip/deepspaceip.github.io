@@ -22,8 +22,8 @@ Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 - DNS in mostly isolated networks: Marc Blanchet
 - [COAP in space](ietf118-coap-in-space.pdf): Carlos Gomez Montenegro
 - recap of key issues discussed on the deepspace mailing list
- - IP addressing and late binding
- - Routing and contact plans
- - Transport
- - Applications and related protocols
+   - IP addressing and late binding
+   - Routing and contact plans
+   - Transport
+   - Applications and related protocols
 - next steps (gap analysis/comparison?)
