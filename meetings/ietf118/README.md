@@ -19,7 +19,7 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 
 - IP forwarding in deep space, implementation: Jean-Philippe Dionne
-- DNS in mostly isolated networks: Marc Blanchet
+- [DNS in mostly isolated networks](ietf118-deepspace-dns-isolated-networks.pdf): Marc Blanchet
 - [COAP in space](ietf118-coap-in-space.pdf): Carlos Gomez Montenegro
 - recap of key issues discussed on the deepspace mailing list
    - IP addressing and late binding
