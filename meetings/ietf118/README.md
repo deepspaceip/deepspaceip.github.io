@@ -14,7 +14,8 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 - QUIC for deep space: Christian Huitema
 - QUIC deep space analysis project: Juan Fraire
 - TAPSCE Hackathon: Émile Stephan
-- QUIC-FEC-Additional-Addresses: François Michel, Maxime Piraud
+- [QUIC-FEC](ietf118-deepspace-quic-fec.pdf): François Michel
+- QUIC-AdditionalAddresses: Maxime Piraud
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 
