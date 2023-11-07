@@ -12,12 +12,12 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 - [Administrativia (note well, mailing list, GitHub, website)](ietf118-deepspace-blanchet.pdf), Marc Blanchet
 - [Proposed Architecture in One Slide](ietf118-deepspace-blanchet-in-one-slide.pdf), Marc Blanchet
 - [QUIC for deep space](ietf118-deepspace-quic-in-space.pdf): Christian Huitema
-- QUIC deep space analysis project: Juan Fraire
-- [TAPSCE Hackathon/Careful Resume](ietf118-deepspace-taps-careful-resume.pdf): Émile Stephan
-- [QUIC FEC and Additional Addresses](ietf118-deepspace-quic-extensions.pdf): François Michel, Maxime Piraud
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 
+- QUIC deep space analysis project: Juan Fraire
+- [TAPSCE Hackathon/Careful Resume](ietf118-deepspace-taps-careful-resume.pdf): Émile Stephan
+- [QUIC FEC and Additional Addresses](ietf118-deepspace-quic-extensions.pdf): François Michel, Maxime Piraud
 - IP forwarding in deep space, implementation: Jean-Philippe Dionne
 - Routing update, Dean Bogdanovic
 - [DNS in mostly isolated networks](ietf118-deepspace-dns-isolated-networks.pdf): Marc Blanchet
