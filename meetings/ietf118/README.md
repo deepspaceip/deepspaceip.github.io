@@ -13,7 +13,7 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 - [Proposed Architecture in One Slide](ietf118-deepspace-blanchet-in-one-slide.pdf), Marc Blanchet
 - [QUIC for deep space](ietf118-deepspace-quic-in-space.pdf): Christian Huitema
 - QUIC deep space analysis project: Juan Fraire
-- TAPSCE Hackathon: Émile Stephan
+- [TAPSCE Hackathon/Careful Resume](ietf118-deepspace-taps-careful-resume.pdf): Émile Stephan
 - [QUIC FEC and Additional Addresses](ietf118-deepspace-quic-extensions.pdf): François Michel, Maxime Piraud
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
