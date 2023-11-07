@@ -27,4 +27,4 @@ Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
    - Routing and contact plans
    - Transport
    - Applications and related protocols
-- next steps (gap analysis/comparison?)
+- next steps
