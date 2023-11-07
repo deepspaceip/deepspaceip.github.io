@@ -14,14 +14,13 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 - [QUIC for deep space](ietf118-deepspace-quic-in-space.pdf): Christian Huitema
 - QUIC deep space analysis project: Juan Fraire
 - TAPSCE Hackathon: Émile Stephan
-- [QUIC-FEC](ietf118-deepspace-quic-fec.pdf): François Michel
-- QUIC-AdditionalAddresses: Maxime Piraud
+- [QUIC FEC and Additional Addresses](ietf118-deepspace-quic-extensions.pdf): François Michel, Maxime Piraud
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 
 - IP forwarding in deep space, implementation: Jean-Philippe Dionne
 - [DNS in mostly isolated networks](ietf118-deepspace-dns-isolated-networks.pdf): Marc Blanchet
-- [COAP in space](ietf118-coap-in-space.pdf): Carlos Gomez Montenegro
+- [COAP in space](ietf118-deepspace-coap-in-space.pdf): Carlos Gomez Montenegro
 - recap of key issues discussed on the deepspace mailing list
    - IP addressing and late binding
    - Routing and contact plans
