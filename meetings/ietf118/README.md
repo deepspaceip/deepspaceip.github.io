@@ -15,6 +15,7 @@ Tuesday Nov 7th, 18h00-18h30 (Prague Timezone), local room: Karlin 4
 
 Thursday Nov 9th, 18h00-19h00 (Prague Timezone), local room: Karlin 4
 
+- [Administrativia (note well, mailing list, GitHub, website)](ietf118-deepspace-blanchet-2ndmeeting.pdf), Marc Blanchet
 - [IP forwarding in deep space, implementation](ietf118-deepspace-forwarding-dionne.pdf): Jean-Philippe Dionne
 - Routing update, Dean Bogdanovic
 - [DNS in mostly isolated networks](ietf118-deepspace-dns-isolated-networks.pdf): Marc Blanchet
