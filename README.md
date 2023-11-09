@@ -20,6 +20,10 @@ Discussions are happening on the deepspace IETF mailing list.
 - [Convergence of Congestion Control from Retained State](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-careful-resume/)
 - [BDP_Frame Extension](https://datatracker.ietf.org/doc/draft-kuhn-quic-bdpframe-extension/)
 - [Time-Variant Routing IETF working group](https://datatracker.ietf.org/wg/tvr/about/)
+- [Transport Services IETF working group](https://datatracker.ietf.org/wg/taps/about/)
+- [The Future Lunar Communications Architecture, Report of the Interagency Operations Advisory Group](https://www.ioag.org/Public%20Documents/Lunar%20communications%20architecture%20study%20report%20FINAL%20v1.3.pdf)
+- [The Future Mars Communications Architecture, Report of the Interagency Operations Advisory Group](https://www.ioag.org/Public%20Documents/MBC%20architecture%20report%20final%20version%20PDF.pdf)
+- [LunaNet Interoperability Specification](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/lunanet-interoperability-specification/#:~:text=The%20purpose%20of%20the%20LunaNet,on%20and%20around%20the%20Moon)
 
 # Contact
 - [Marc Blanchet](mailto:marc.blanchet@viagenie.ca)
