@@ -67,6 +67,9 @@
 - Draft under prep for space mapping.
 - Chat: CoAP over Bundle, CoAP over HTTP over Bundle? Issue with CoAP over Bundle?
  
+### QUIC deep space analysis project: Juan Fraire
+- Marc, on behalf of Juan: Juan is starting a project to compare QUIC and LTP transports in deep space and is looking for students and collaborators. If interested, contact him.
+
 ### [QUIC over TAPS API for Deep Space: TAPSce And Careful Resume (CR), and BDP frame](ietf118-deepspace-taps-careful-resume.pdf), Emile Stephan
 - report from QUIC over TAPSce (pronounce it TAPsee 😊) Hackathon, cf. Careful Resume and BDP Frame
 - Max worked on python-asyncio-taps and aioquic
