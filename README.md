@@ -9,7 +9,8 @@ Discussions are happening on the deepspace IETF mailing list.
 - [archives](https://mailarchive.ietf.org/arch/browse/deepspace/)
 
 # Meetings
-- [IETF-118 Prague Meetings](meetings/ietf118/README.md)
+- [IETF-118 Prague Side Meetings](meetings/ietf118/README.md)
+- [IETF-119 Brisbane Side Meeting](meetings/ietf119/README.md)
 
 # Reference Documents
 - [Revisiting the Use of the IP Protocol Stack in Deep Space: Assessment and Possible Solutions](https://datatracker.ietf.org/doc/draft-many-deepspace-ip-assessment/)
