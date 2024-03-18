@@ -1,6 +1,6 @@
 # Description
 
-This initiative is to reassess the use of the Internet Protocol (IP) stack for deep space, as described in this [IETF draft](https://datatracker.ietf.org/doc/draft-many-deepspace-ip-assessment/). It is an alternative to the use of the [Bundle Protocol](https://datatracker.ietf.org/doc/rfc9171/) to create a network in deep space. It is a reassessment of [RFC4838](https://datatracker.ietf.org/doc/html/rfc4838).
+This initiative is to use of the Internet Protocol (IP) suite for deep space, as described in this [IETF draft](https://datatracker.ietf.org/doc/draft-many-deepspace-ip-assessment/). It is an alternative to the use of the [Bundle Protocol](https://datatracker.ietf.org/doc/rfc9171/) to create a network in deep space. It is also a reassessment of [RFC4838](https://datatracker.ietf.org/doc/html/rfc4838).
 
 # Discussion
 Discussions are happening on the deepspace IETF mailing list.
