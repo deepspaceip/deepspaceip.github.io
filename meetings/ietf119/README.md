@@ -7,9 +7,9 @@
 ## Agenda
 
 - Administrativia (note well, mailing list, GitHub, website, what is deepspace IP), Marc Blanchet
-- Update on Testbed, Marc Blanchet
-- COAP for deep space, Carles Gomez Montenegro
-- Congestion Control Discussion
+- [Update on Testbed](ietf119-brisbane-deepspaceip-whatis-update-testbed.pdf), Marc Blanchet
+- [COAP for deep space](ietf119-deepspace-coap-in-space.pdf), Carles Gomez Montenegro
+- [Congestion Control Discussion](ietf119-brisbane-deepspaceip-cc-discussion.pdf)
 - next steps
 
 ## Minutes
