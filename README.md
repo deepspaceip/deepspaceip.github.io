@@ -17,6 +17,9 @@ Discussions are happening on the deepspace IETF mailing list.
 - [Domain Name System in Mostly Isolated Networks](https://datatracker.ietf.org/doc/draft-blanchet-dns-isolated-networks)
 - [CoAP in Space](https://datatracker.ietf.org/doc/draft-gomez-core-coap-space/)
 
+# Additional Documentation and Presentations
+- [Between 0x2 Nerds video presentation of Deep Space IP](https://www.youtube.com/watch?v=nIWgNkd2DPo)
+
 # Related Work
 - [Convergence of Congestion Control from Retained State](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-careful-resume/)
 - [BDP_Frame Extension](https://datatracker.ietf.org/doc/draft-kuhn-quic-bdpframe-extension/)
