@@ -9,6 +9,7 @@ Discussions are happening on the deepspace IETF mailing list.
 - [archives](https://mailarchive.ietf.org/arch/browse/deepspace/)
 
 # Meetings
+- [2024-07 IETF-120 Vancouver Side Meeting](meetings/ietf120/README.md)
 - [2024-03 IETF-119 Brisbane Side Meeting](meetings/ietf119/README.md)
 - [2023-11 IETF-118 Prague Side Meetings](meetings/ietf118/README.md)
 
