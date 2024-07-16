@@ -8,7 +8,7 @@
 - Introduction, administrativia, Marc Blanchet
 - Some Deep space simulation results, Marc Blanchet
 - Quinn Workbench, Adolfo Ochagavia
-- IP store and forward in Linux kernel, Yihan Zhu
+- SRv6 Based Store-Carry-and-Forward Networking for Deep Space, Yihan Zhu
 - SCHC compression and fragmentation for deep space, Laurent Toutain
 - CoAP for deep space, Carles Gomez Montenegro
 
