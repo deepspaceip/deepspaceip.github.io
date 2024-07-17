@@ -6,11 +6,11 @@
 
 ## Agenda
 - Introduction, administrativia, Marc Blanchet
+- SCHC compression and fragmentation for deep space, Laurent Toutain
+- SRv6 Based Store-Carry-and-Forward Networking for Deep Space, Yihan Zhu
+- CoAP for deep space, Carles Gomez Montenegro
 - Some Deep space simulation results, Marc Blanchet
 - Quinn Workbench, Adolfo Ochagavia
-- SRv6 Based Store-Carry-and-Forward Networking for Deep Space, Yihan Zhu
-- SCHC compression and fragmentation for deep space, Laurent Toutain
-- CoAP for deep space, Carles Gomez Montenegro
 
 ## Minutes
 - TBD minutes
