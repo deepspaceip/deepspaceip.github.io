@@ -9,8 +9,9 @@
 - [SCHC compression and fragmentation for deep space](ietf120-deepspaceip-schc.pdf), Laurent Toutain
 - [SRv6 Based Store-Carry-and-Forward Networking for Deep Space](ietf120-deepspaceip-srv6-store-forward.pdf), Yihan Zhu
 - [CoAP for deep space](ietf120-deepspaceip-coap.pdf), Carles Gomez Montenegro
-- [Some Deep space simulation results](ietf120-deepspaceip-simulation-results.pdf), Marc Blanchet
 - [Quinn Workbench](ietf120-deepspaceip-quinn-workbench.pdf), Adolfo Ochagavia
+- Not presented due to time constraint: [Some Deep space simulation results](ietf120-deepspaceip-simulation-results.pdf), Marc Blanchet
+
 
 ## Minutes
 - TBD minutes
