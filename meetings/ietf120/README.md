@@ -5,12 +5,12 @@
 - For remote participation, we are using IETF infrastructure for side-meetings: Webex. Please use: [https://ietf.webex.com/meet/sidemeetingietf1](https://ietf.webex.com/meet/sidemeetingietf1).
 
 ## Agenda
-- Introduction, administrativia, news, Marc Blanchet
-- [ietf120-deepspaceip-schc.pdf](SCHC compression and fragmentation for deep space), Laurent Toutain
-- [ietf120-deepspaceip-srv6-store-forward.pdf](SRv6 Based Store-Carry-and-Forward Networking for Deep Space), Yihan Zhu
-- [ietf120-deepspaceip-coap.pdf](CoAP for deep space), Carles Gomez Montenegro
-- [ietf120-deepspaceip-simulation-results.pdf](Some Deep space simulation results), Marc Blanchet
-- [ietf120-deepspaceip-quinn-workbench.pdf](Quinn Workbench), Adolfo Ochagavia
+- [Introduction, administrativia, news](ietf120-deepspaceip-intro.pdf), Marc Blanchet
+- [SCHC compression and fragmentation for deep space](ietf120-deepspaceip-schc.pdf), Laurent Toutain
+- [SRv6 Based Store-Carry-and-Forward Networking for Deep Space](ietf120-deepspaceip-srv6-store-forward.pdf), Yihan Zhu
+- [CoAP for deep space](ietf120-deepspaceip-coap.pdf), Carles Gomez Montenegro
+- [Some Deep space simulation results](ietf120-deepspaceip-simulation-results.pdf), Marc Blanchet
+- [Quinn Workbench](ietf120-deepspaceip-quinn-workbench.pdf), Adolfo Ochagavia
 
 ## Minutes
 - TBD minutes
