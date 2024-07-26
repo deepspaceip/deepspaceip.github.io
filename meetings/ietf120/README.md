@@ -12,6 +12,8 @@
 - [Quinn Workbench](ietf120-deepspaceip-quinn-workbench.pdf), Adolfo Ochagavia
 - Not presented due to time constraint: [Some Deep space simulation results](ietf120-deepspaceip-simulation-results.pdf), Marc Blanchet
 
+## Recording
+- [Recording of the meeting](ietf120-deepspaceip-recording.mp4)
+- [Generated transcript](ietf120-deepspaceip-generatednotes.txt)
 
-## Minutes
-- TBD minutes
+
