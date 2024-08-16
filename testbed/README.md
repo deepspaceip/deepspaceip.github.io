@@ -2,6 +2,8 @@
 
 This section describes the testbed used for simulation as well as results.
 
+N.B. This is not the current status of the testbed. It will be updated as time permits.
+
 
 ## Description
 The testbed uses various tools such as:
