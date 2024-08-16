@@ -8,6 +8,10 @@ Discussions are happening on the deepspace IETF mailing list.
 - [subscription](https://www.ietf.org/mailman/listinfo/deepspace)
 - [archives](https://mailarchive.ietf.org/arch/browse/deepspace/)
 
+# Proposal for IETF Working Group
+- [BOF proposal](wg/bof-proposal.md)
+- [Charter proposal](wg/charter.md)
+
 # Meetings
 - [2024-07 IETF-120 Vancouver Side Meeting](meetings/ietf120/README.md)
 - [2024-03 IETF-119 Brisbane Side Meeting](meetings/ietf119/README.md)
