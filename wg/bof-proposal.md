@@ -24,8 +24,9 @@ The dtn working group is working on the same use case but using the Bundle Proto
 
 ## Agenda
 * Problem Space,TBD 
-* LunaNet: Context and Interoperability Specification, Wesley Eddy
-* Moon Mobile Provider Requirements, TBC
+* LunaNet: Context and Interoperability Specification related to IP, Wesley Eddy
+* Moon Mobile Provider Requirements, KDDI
+* China Space Agency Plans for IP in Deep Space, Xiongwen He
 * Architecture, Marc Blanchet
 * Proposed Charter, BOF co-chairs
 * Next Steps, BOF co-chairs
