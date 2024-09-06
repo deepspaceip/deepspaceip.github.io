@@ -8,7 +8,7 @@ Out of scope topics are: profiling/modifying TCP, near Earth use cases(LEO-GEO, 
 
 The working group should do liaisons with key space stakeholders, such as the working groups of LunaNet Interoperability Specification(LNIS), Interagency Operations Advisory Group(IOAG), Consultative Committee for Space Data Systems(CCSDS), space agencies and space private sector. Within IETF, it will coordinate work with TVR, QUIC, DNSOP and DTN.
 
-## Milestones
+## Work Items
 * Deep space IP Architecture, Informational
 * QUIC profile for deep space, Informational
 * DNS in mostly isolated networks, Informational
