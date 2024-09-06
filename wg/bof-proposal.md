@@ -8,7 +8,7 @@ IP is specified in the current set of lunar relay procurements from US, European
 * Status: WG Forming
 * Responsible AD: Eric Vyncke
 * BOF proponents: Marc Blanchet <marc.blanchet@viagenie.ca>, Wesley Eddy <wes@mti-systems.com>, Tony Li <tony.li@tony.li>
-* BOF chairs: TBD
+* BOF chairs: Lars Eggert, Alvaro Retana
 * Number of people expected to attend: 100
 * Length of session (1 or 2 hours): 2 hours
 * Chair Conflicts: TBD
