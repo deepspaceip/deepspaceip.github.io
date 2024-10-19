@@ -19,6 +19,7 @@ Discussions are happening on the deepspace IETF mailing list.
 
 # Reference Documents
 - [Revisiting the Use of the IP Protocol Stack in Deep Space: Assessment and Possible Solutions](https://datatracker.ietf.org/doc/draft-many-deepspace-ip-assessment/)
+- [QUIC Profile for Depep Space](https://datatracker.ietf.org/doc/draft-many-deepspace-quic-profile/)
 - [QUIC in Space](https://datatracker.ietf.org/doc/draft-huitema-quic-in-space/)
 - [Domain Name System in Mostly Isolated Networks](https://datatracker.ietf.org/doc/draft-blanchet-dns-isolated-networks)
 - [CoAP in Space](https://datatracker.ietf.org/doc/draft-gomez-core-coap-space/)
