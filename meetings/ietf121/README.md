@@ -4,7 +4,7 @@
 - Monday 13:30-15:00 (Dublin local time), 	Wicklow Hall 2A, Convention Centre, Dublin
 - For remote participation, we are using IETF infrastructure for side-meetings: Webex. Please use: [https://ietf.webex.com/meet/sidemeetingietf2](https://ietf.webex.com/meet/sidemeetingietf2).
 
-##IMPORTANT TO NOTE
+## IMPORTANT TO NOTE
 - this is an informal technical meeting. The discussion about a possible working group will be held during the BOF meeting on Thrusday 13h30-15h30 Dublin local time, Wicklow Hall 2B, Convention Center Dublin
 
 ## Agenda
