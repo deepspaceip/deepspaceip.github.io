@@ -12,7 +12,7 @@
 - Mars Communication Windows, RTT and Storage Simulations, Marc Blanchet
 - ECN tests, Adolfo Ochagavia
 - IPv6+ Network Architecture for Deep space, Yihan Zhu
-- SPACE - Scalable Pubsub, Asymmetric and CachEd transport for Deep Space communications, Suhas Nandakumar
+- [SPACE - Scalable Pubsub, Asymmetric and CachEd transport for Deep Space communications](https://datatracker.ietf.org/doc/draft-nandakumar-deepspace-moq/), Suhas Nandakumar
 
 ## Recording
 - TBA after the meeting
