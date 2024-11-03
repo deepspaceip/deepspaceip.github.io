@@ -1,15 +1,23 @@
-# DEEPSPACE WG Proposed Charter
+# DEEPSPACE WG
 
-Deep space communications involve long delays (e.g., Earth to Mars is 4-20 minutes) and intermittent communications, because of orbital dynamics. The combination of long delays and intermittent communications makes the round-trip time very large and very variable. Up to now, communications have been done on a layer-2 point-to-point basis, with sometimes the use of relays, therefore no layer-3 networking was possible. Space agencies and private sector are planning to deploy IP networks on celestial bodies, such as Moon or Mars, ground, orbits, and vicinity. By using IP for deep-space links, a complete end-to-end IP network becomes usable. However, given the delays and disruptions, the upper layers such as transport and application protocols have to be profiled to support this environment. While the first implementation of this work is for Moon, the benchmark used for this work is Mars and further.
+Some space communications involve long, variable delays (e.g., Earth to Mars is 4-20 minutes one-way) and intermittent end-to-end connectivity due to orbital dynamics. Until now, space communications have relied on layer-2 point-to-point networking, sometimes involving relays, without establishing an end-to-end layer-3 network.
 
-This working group will work on an overall architecture of using the IP stack in deep space, including documenting the key characteristics that make this environment unique. A profile for the QUIC transport will also be defined to make use of QUIC end-to-end in deep space. Given the often disconnected nature of networks on celestial bodies, considerations on the deployment of DNS will be documented. Finally, considerations on how to properly design applications in this environment will be provided.
+Today, space agencies and the private sector are planning to deploy IP networks on the surfaces of celestial bodies, such as the Moon or Mars, that connect to orbital equipment and further on to Earth, establishing a complete end-to-end IP network across space.
 
-Out of scope topics are: profiling/modifying TCP, near Earth use cases(LEO-GEO, NTN/6G). It is expected that interworking between Bundle Protocol and IP, and any BP protocol modification will solely be done in DTN. Research topics shall be taken by an appropriate IRTF research group.
+However, given the delays and disruptions involved in space communications, protocols may have to be profiled to operate efficiently in this environment. 
 
-The working group should do liaisons with key space stakeholders, such as the working groups of LunaNet Interoperability Specification(LNIS), Interagency Operations Advisory Group(IOAG), Consultative Committee for Space Data Systems(CCSDS), space agencies and space private sector. Within IETF, it will coordinate work with TVR, QUIC, DNSOP and DTN.
+This working group will work on the following items:
 
-## Work Items
-* Deep space IP Architecture, Informational
-* QUIC profile for deep space, Informational
-* DNS in mostly isolated networks, Informational
-* Application Considerations for deep space, Informational
+* Documenting the key characteristics that make the space environment unique and considerations for properly designing space applications will be provided.
+
+* Work on an architecture for using the IP stack in space that discusses the key differences to terrestrial IP use. While lunar networking is the first deployment of this work, the overall architecture should support communication with Mars and, ideally, further out.
+
+* A profile for the QUIC transport protocol that enables efficient end-to-end use of QUIC in space. Given that TLS is an integral component of QUIC, considerations for the use of TLS are also in scope.
+
+* Considerations for the deployment of DNS will be documented, given the often disconnected nature of space networks.
+
+Other topics, including the Bundle Protocol (BP), are out of scope for this WG.
+
+The DEEPSPACE WG should avoid modifications to existing protocols. Wherever possible, existing protocols must be used within existing architectures to implement the necessary functions. Any modifications of existing protocols should be carried out in the WGs responsible for them and in coordination with the DEEPSPACE WG. Alternatively, after agreement among all the relevant WG chairs and responsible Area Directors, the work may be done in the DEEPSPACE WG.
+
+The working group will welcome discussions with key stakeholders, such as the working groups of the LunaNet Interoperability Specification (LNIS), the Interagency Operations Advisory Group (IOAG), the Consultative Committee for Space Data Systems (CCSDS), space agencies, and the private sector. Within the IETF, it will coordinate its work with TVR on scheduling, QUIC on profiling, TLS on security, DNSOP, and DTN on interworking.
