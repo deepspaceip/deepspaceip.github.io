@@ -11,7 +11,7 @@
 - [Introduction, Administrativia, News](ietf121-deepspace-intro.pdf), Marc Blanchet
 - [Earth-Mars Communication Windows Usage Study](ietf121-deepspace-mars-comm-windows.pdf), Marc Blanchet
 - [Quinn Workbench Update](ietf121-deepspace-quinn-workbench.pdf), Adolfo Ochagavia
-- [NETCONF over QUIC](ietf121-deepspace-netconf-over-quic.pdf), Adolfo Ochagavia
+- [NETCONF over QUIC](ietf121-deepspace-netconf-over-quic.pdf), [demo](ietf121-deepspace-netconf-quic-demo.mkv), Adolfo Ochagavia
 - [SPACE - Scalable Pubsub, Asymmetric and CachEd transport for Deep Space communications](ietf121-deepspace-moq.pdf), Suhas Nandakumar
 - [IPv6+ Network Architecture for Deep space](ietf121-deepspace-ipv6+-network-architecture.pdf), Yihan Zhu
 
