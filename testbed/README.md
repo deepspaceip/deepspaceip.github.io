@@ -13,9 +13,13 @@ The testbed uses various tools such as:
 - [multipass](https://multipass.run) which creates on the fly instances of Ubuntu images.
 - [cloudinit](https://cloudinit.readthedocs.io/en/latest/) which configures the ubuntu images to be ready for simulation
 - various tools: docker, tcpdump, wireshark, ...
-- For QUIC/QUINN testing, a workbench was created enabling the easy configuration of tests by setting various QUIC transport parameters and network conditioning such as delay, loss, ordering in a JSON file. The workbench does time warping so even if the simulated propagation delays are in days, the result of the simulation is available within seconds. 
+- For QUIC/QUINN testing, a workbench was created enabling the easy configuration of tests by setting various QUIC transport parameters and network conditioning such as delay, loss, ordering and ECN marking in a JSON file. The workbench does time warping so even if the simulated propagation delays are in days, the result of the simulation is available within seconds. 
   - [Presentation of the tool](../meetings/ietf120/ietf120-deepspaceip-quinn-workbench.pdf)
   - [github repo](https://github.com/aochagavia/quinn-workbench)
+- For NETCONF over QUIC testing with a proxy implementation, see:
+  - [Presentation of the tool](../meetings/ietf121/ietf121-deepspace-netconf-over-quic.pdf), [demo](../meetings/ietf121/ietf121-deepspace-netconf-quic-demo.mkv)
+  - [github repo](https://github.com/aochagavia/netconf-over-quinn)
+
 
 ## Results
 
