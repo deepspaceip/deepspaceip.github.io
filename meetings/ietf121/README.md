@@ -19,6 +19,7 @@
 ## Recording
 - [Side meeting recording Part 1](ietf121-deepspace-side-meeting-recording-part1.mp4)
 - [Side meeting recording Part 2](ietf121-deepspace-side-meeting-recording-part2.mp4)
+- [Side meeting Transcript](ietf121-deepspace-side-meeting-recording-transcript.txt)
 
 
 

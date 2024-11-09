@@ -1,0 +1,1129 @@
+WEBVTT
+
+1 "Side Meeting2" (1216604928)
+00:00:01.983 --> 00:00:22.759
+Okay, just for the recording, this is the deep space side meeting Dublin. We have a quick in space Slack sub channel under quick dev, not used a lot, but sometimes was used a lot during the.
+
+2 "Side Meeting2" (1216604928)
+00:00:22.759 --> 00:00:41.520
+We acted on last time and that's remote access. So in two slides, what is deep space IP? The context is the deep space says specific properties or characteristics such as essentially long delays and disruptions.
+
+3 "Side Meeting2" (1216604928)
+00:00:41.520 --> 00:01:01.520
+The goal is to use the IP protocol in deep space as a compliment or alternative or, you know, different to a bundle protocol. The work has been to investigating how to profile the IP protocols and apps to make them work in deep space.
+
+4 "Side Meeting2" (1216604928)
+00:01:01.520 --> 00:01:18.750
+Which resumes to kind of key considerations which is on the IP forwarding side if there's an intermittent node who is facing intermittent connectivity, in a typical IP environment, you would drop the packet.
+
+5 "Side Meeting2" (1216604928)
+00:01:18.750 --> 00:01:35.430
+But then in this context you would not drop because you know that in the next window of computation you will be able to forward the packet to the destination, so you need to instead store the packet until the next opportunity happens.
+
+6 "Side Meeting2" (1216604928)
+00:01:35.430 --> 00:01:54.750
+You need to, do some profiling of the transport and we've been working with quick. Maybe others are possible, but quick was the focus at the moment. You need some network services that are you know appropriate for this environment.
+
+7 "Side Meeting2" (1216604928)
+00:01:54.750 --> 00:02:14.750
+DNS network management and you need to have, sorry? Sorry Mark, there's NO mic queue, so I I just put my hand up. Sorry, I was No, NO NO, it's absolutely fine. Can I just ask one favor about the, about the space IP?
+
+8 "Side Meeting2" (1216604928)
+00:02:14.750 --> 00:02:31.650
+I, I love everything you have on that slide apart from, do you have to say as an alternative to BP? Can we just ignore all of that? Leave the politics aside and just just say work out how to make IP work in this environment. Sure, thank you.
+
+9 "Side Meeting2" (1216604928)
+00:02:31.650 --> 00:02:48.570
+The usual thing is that as soon as you start saying that people say well there's a bundle protocol, so that's I I completely understand that and and that's fine, but let's not poke the horn its nest here.
+
+10 "Side Meeting2" (1216604928)
+00:02:48.570 --> 00:03:04.080
+So that's documented in various drafts and that's the kind of the protocol stack IP over different links CCSDS or.
+
+11 "Side Meeting2" (1216604928)
+00:03:04.080 --> 00:03:24.080
+Our traditional links, those will be, all of them below IP will be used in space, three GPP five G thing and E22 something will be used on surface of cellistial bodies such as Mars.
+
+12 "Side Meeting2" (1216604928)
+00:03:24.080 --> 00:03:40.620
+We'll be using UDP, at least that's the current, you know, state. You could use coap, we had a few presentations at side meetings about co Op. We did simulations using NTP SNMP.
+
+13 "Side Meeting2" (1216604928)
+00:03:40.620 --> 00:04:00.620
+And quick obviously in HTTP, but that's not saying this is the whole thing, but it's an example of those protocols that you could use given propo proper proper profile. News since the last ITF they were.
+
+14 "Side Meeting2" (1216604928)
+00:04:00.620 --> 00:04:17.670
+Four relevant draft being published, the architecture one, quick profile, DNS how to do DNS in this environment, and something which is already adopted by the netconf working group is netconf over quick.
+
+15 "Side Meeting2" (1216604928)
+00:04:17.670 --> 00:04:37.670
+Because and we will have a small, a short presentation on netconf over quick implementation, and this is useful because netconf currently works over SSH or TCP, which, you know, not great for space, but if we have it over quick, then it's.
+
+16 "Side Meeting2" (1216604928)
+00:04:37.670 --> 00:04:57.359
+More usable and so this is actually adopted by the netconf working group. We had discussions with Shik, the editor compression protocol and there will be a discussion this week during the Shik working group.
+
+17 "Side Meeting2" (1216604928)
+00:04:57.359 --> 00:05:17.359
+About that and the last one which is the most important is we will have a buff for discussing the formation of the working group. The direction is to kind of start with a few key work items and that would be Thursday at 01:00, so you're all.
+
+18 "Side Meeting2" (1216604928)
+00:05:17.359 --> 00:05:35.249
+Invited and obviously discussions about charter or working group or all those things are out of scope of this meeting. Any questions before I move to the 1st, you know, real.
+
+19 "Side Meeting2" (1216604928)
+00:05:35.249 --> 00:05:51.299
+Content? Well if if someone in the room could help me watch the the you know questions or.
+
+20 "Side Meeting2" (1216604928)
+00:05:51.299 --> 00:06:11.299
+On the chat of the Webex would be very useful because it's kind of too much for me, to do. So, next one is about, a communication window study, and I the subtitle is all about.
+
+21 "Side Meeting2" (1216604928)
+00:06:11.299 --> 00:06:33.139
+Time you'll see why. This is in collaboration with the G GPL. I think Roy is probably online so before we start terminology, you can hear Direct from Earth.
+
+22 "Side Meeting2" (1216604928)
+00:06:33.139 --> 00:06:53.069
+Or DFE uplink of forward, this is from Earth to to Mars, e.g.. Director Earth is from Mars to earth. So DTE downlink return all these are you know similar. Depending on where you come from, you, you would use different.
+
+23 "Side Meeting2" (1216604928)
+00:06:53.069 --> 00:07:08.129
+Words. So, so we had, the data set of three months of communication windows plans from the database that is managed by JPL.
+
+24 "Side Meeting2" (1216604928)
+00:07:08.129 --> 00:07:28.129
+So these are different communication windows, so one is from Earth Marss arbiters, from overs and from three different communication windows. Currently each mission, so the deep space network, the ground antennas.
+
+25 "Side Meeting2" (1216604928)
+00:07:28.129 --> 00:07:46.229
+Each orbitter, each rover is a different mission, and they all input data in the database and then communication windows are roughly manually chosen and degated to a single mission. So the purpose, the goal of the study was to identify.
+
+26 "Side Meeting2" (1216604928)
+00:07:46.229 --> 00:08:06.229
+And understand communication windows with real data. I guess many people have been looking into, you know, easy scenarios, but this is real data. So really use a communication windows data for a larger IP network.
+
+27 "Side Meeting2" (1216604928)
+00:08:06.229 --> 00:08:34.079
+Simulations be because as you may remember, we have a kind of test bed with simulation of various protocols and we wanted to actually use that kind of data to to make it even more real and to use it as an input for, you know, protocol engineering, for scheduling, planning, storage capacity, holding time, protocol timing, and we don't have any data like that for Moon, so.
+
+28 "Side Meeting2" (1216604928)
+00:08:34.079 --> 00:08:54.079
+We have currently five orbiters around Maris. Four are actually being used in the study TGO from ISA MRO from NASA, how do you say and for and from Naza. You could see.
+
+29 "Side Meeting2" (1216604928)
+00:08:54.079 --> 00:09:19.199
+The typical rover pass, so rover e.g. for TGO with a pass would be every 12 h for about 10 min and the uplink will be every hour to for 1 h and downlink would be every 2 h for 1 h. So you see they are similar, different. Maven is pretty different because there's a elippical arbit.
+
+30 "Side Meeting2" (1216604928)
+00:09:19.199 --> 00:09:35.339
+But the key point here, as you will see in the study, is those past timings are very, very variable. So here's just an example to give you a rough idea what it is, but in fact, it's very variable. So you should not conclude anything from those numbers.
+
+31 "Side Meeting2" (1216604928)
+00:09:35.339 --> 00:09:53.699
+E.g., Maven is, you know, was kind of for the uplink and downlink, uplink is like three days or so and within the data set we had Maven as at some point as a window of seven days instead of three, so.
+
+32 "Side Meeting2" (1216604928)
+00:09:53.699 --> 00:10:10.139
+The landers or the ruvers, there are three not including the which is kind of unseen from this data because it's actually proxied by M 20 perseverance.
+
+33 "Side Meeting2" (1216604928)
+00:10:10.139 --> 00:10:25.349
+And insight is not used in the study, but in fact we could have used it because we have all the data for it. The raw data was 4500 records of.
+
+34 "Side Meeting2" (1216604928)
+00:10:25.349 --> 00:10:45.349
+Mars orbitters to rovers, then thousand so records of Earth to Morris and 3000 records for Mars towards, orbitters obviously. Time reference is is an interesting problem, not all.
+
+35 "Side Meeting2" (1216604928)
+00:10:45.349 --> 00:11:11.149
+Rows and files are in the same time reference, some are UTC, some are spacecraft local time, and you have to convert data to the same time reference for for the purpose of, you know, comparing and that would be the spacecraft time. So the orbitter time because we're really looking at the orbitter focus because that's where you will be doing relays and forwarding and storing and stuff.
+
+36 "Side Meeting2" (1216604928)
+00:11:11.149 --> 00:11:29.219
+So to do that, if you have to take into account the fact that there's a lighttime delay, right? And during that period of time in Q2 2024, there was 15 to 17 min.
+
+37 "Side Meeting2" (1216604928)
+00:11:29.219 --> 00:11:49.219
+One way lifetime between Earth and Maersk, and that lighttime roughly changed every day about a 2nd per day. So given the software tools we have, you know, like libraries about time and date, they are all based in Earth's time zone. So that.
+
+38 "Side Meeting2" (1216604928)
+00:11:49.219 --> 00:12:10.789
+Actually doesn't work with, with this. So what we did was he set artificially the space graphical time to be UTC to actually make calculations but it's just a act and that requires more work because our protocols and our libraries and stuff are not ready for.
+
+39 "Side Meeting2" (1216604928)
+00:12:10.789 --> 00:12:26.339
+Handling those kinds of time reference or time zones for your information on each the each over as a different time, and so.
+
+40 "Side Meeting2" (1216604928)
+00:12:26.339 --> 00:12:46.339
+Even within the environment, there are multiple time zones that are handled by, you know, GPL and others involved. Considerations. Arbiters to rovers are full duplex. Most of those computation windows are actually not used.
+
+41 "Side Meeting2" (1216604928)
+00:12:46.339 --> 00:13:02.849
+By missions. For various reasons, I don't want to go there but you know, there's a lot of constraints. We in this study, we just use them all for the purpose of the actual study which was, you know, find all the communication windows what what's.
+
+42 "Side Meeting2" (1216604928)
+00:13:02.849 --> 00:13:22.849
+It's possible. One of the reasons that communication windows are not used, e.g., is that e.g. MSL curiosity is like very old is power battery is very low, so they are really careful about using, you know, every bit of the energy and so.
+
+43 "Side Meeting2" (1216604928)
+00:13:22.849 --> 00:13:51.209
+Therefore they're only using some communication windows because to save power. That's an example, but but for the purpose of our work for kind of future networking, those are kind of, not to say the same. Earth to arbiters, it's one way, it's different communication windows for each direction. Data frames, the frames actually right now are held in the orbitter until the next communication window.
+
+44 "Side Meeting2" (1216604928)
+00:13:51.209 --> 00:14:11.209
+Is happening, e.g., and the bottleneck is not the storage people from are always looking at this and it's it's never been a problem. Only one orbitar has smaller storage memory.
+
+45 "Side Meeting2" (1216604928)
+00:14:11.209 --> 00:14:31.409
+Obviously but the others have big. E.g., MRO was launched in 2005 as 120 gig of solid state memory. The real bottleneck is the Rover to Orbital link bandwidth. That's the current bottleneck.
+
+46 "Side Meeting2" (1216604928)
+00:14:31.409 --> 00:14:52.549
+So how we did this? Remember there's three windows earth toover, which is full deplex and orbitter to earth. So we removed the entries of Maersk express, which is we don't have all the data and inside to, you know.
+
+47 "Side Meeting2" (1216604928)
+00:14:52.549 --> 00:15:13.649
+Does not used so. And so for each orbitrary rover communication windows, we find the latest before earth to orbitor, the same orbitter, and then the soonest after orbitrary towards for the same orbitar, that way you kind of knit.
+
+48 "Side Meeting2" (1216604928)
+00:15:13.649 --> 00:15:33.649
+The whole path, and we calculate at that time the best RTT because remember we're taking the best, the best case, which is the latest before and the soonest after, so it's really something that we actually did you will see in the next slides, but we consider the overlapping with.
+
+49 "Side Meeting2" (1216604928)
+00:15:33.649 --> 00:15:55.789
+Those but in fact currently with relays and remember that relays currently were not missions for to be a relay, they were MRO for was for, you know, taking pictures at different you know wavelengths but they were repurposed as relays, so their functionality are.
+
+50 "Side Meeting2" (1216604928)
+00:15:55.789 --> 00:15:58.139
+Kind of the.
+
+51 "Side Meeting2" (1216604928)
+00:15:58.139 --> 00:16:16.829
+I don't know. Basics not the right time, but you know minimal. So we calculate the best RTT, but in fact, the real RTT would be longer and for the the current use they are not doing overlapping windows.
+
+52 "Side Meeting2" (1216604928)
+00:16:16.829 --> 00:16:33.329
+And we also calculate the orbitor holding time. So the duration of data storage until it could be forwarded. So I think that's very good input for, you know, if either BP or IP to do simulations, we'll, we'll get a good grasp of.
+
+53 "Side Meeting2" (1216604928)
+00:16:33.329 --> 00:16:49.139
+And then we calculate various statistics. And we assume again the usage of all communication windows. So these are just some of the windows sequence types so on on the kind of black one, by the way, all this.
+
+54 "Side Meeting2" (1216604928)
+00:16:49.139 --> 00:17:04.319
+Slides should be on on the website. This is time. So the 1st one on the top is the three, you see that the earth to arbiter, arbiter and river and.
+
+55 "Side Meeting2" (1216604928)
+00:17:04.319 --> 00:17:24.319
+Arbitrary to hers are all overlapping. So that creates a a you know a line of sight path back and forth. You have other patterns such as NO overlapping like the 2nd one. 3rd one is like it's half overlapping and all kinds you'll.
+
+56 "Side Meeting2" (1216604928)
+00:17:24.319 --> 00:17:48.439
+This is just a small drawing. You you could see all all possible patterns. Obviously this is not that scale. Obviously when when they are not overlapping, you know, in Terry are well in practice also but if it's not overlapping then it means storage, right? There's NO point.
+
+57 "Side Meeting2" (1216604928)
+00:17:48.439 --> 00:18:05.819
+Yeah, NO way around. And as I said overlapping windows are not currently used. So results, we out of the multiple thousands records we knitted, you know.
+
+58 "Side Meeting2" (1216604928)
+00:18:05.819 --> 00:18:25.819
+Round trip path, 2500 so arbiter one to ruver, to same orbital back to work. Those only 20 % was actually used in by the missions and that's the reason I just said. The interesting part, the.
+
+59 "Side Meeting2" (1216604928)
+00:18:25.819 --> 00:18:45.779
+Link earth tomorrows or Ford Link or direct, from earth. The average is 2.5 h, the minimum is 10 min, which is kind of the, the, the minimum because of like when we light time and maximum is 10 h.
+
+60 "Side Meeting2" (1216604928)
+00:18:45.779 --> 00:19:02.519
+The downlink similarly, but again with a lot of variations the results, the best RTT, so again approximated with some of heuristics I just described, the average is.
+
+61 "Side Meeting2" (1216604928)
+00:19:02.519 --> 00:19:21.809
+15 h or roughly 16 h. Minimum is 37 min, which is when, you know, there's a line of sight, you know, and overlapping windows and communication windows and go back and forth. So it's roughly two way lighttime and maximum is like seven days.
+
+62 "Side Meeting2" (1216604928)
+00:19:21.809 --> 00:19:37.589
+And the reason was, is that during the three months data set, there was a time where Maven was at a seven day off between two passes compared to a normal three, three day.
+
+63 "Side Meeting2" (1216604928)
+00:19:37.589 --> 00:19:55.229
+I don't know the reason why, but this is what it is. And in space it happens. Orbitter all holding time, average 15 h minimum zero because when you have overlapping you don't need to store.
+
+64 "Side Meeting2" (1216604928)
+00:19:55.229 --> 00:20:15.229
+But in reality, they are storing all the time because they don't support overlapping and maximum is like the seven days because you were just waiting for Maven to come back. So the nitted paths are really based on real data, but they do not actually represent what.
+
+65 "Side Meeting2" (1216604928)
+00:20:15.229 --> 00:20:38.369
+Are currently used, right? So you need to understand that. So it's not, we're not trying to see what, if they are doing good or better, it's just a data set that enables us to good do good s to do good simulations and understand the patterns. E.g., they use a much small smaller set for.
+
+66 "Side Meeting2" (1216604928)
+00:20:38.369 --> 00:20:53.669
+For all kinds of considerations, e.g., Maven for Mavin, they told me the people from MSL told me that this should be a 4 h NO communication window between each Rover using that orbiter.
+
+67 "Side Meeting2" (1216604928)
+00:20:53.669 --> 00:21:13.669
+Because that's the time where the batteries of the arbitrary being charged in between, right? So that's just a simple example out of a whole list of considerations they have. I should pass fast but because I'll be presenting this, so we try to do a TVR implement.
+
+68 "Side Meeting2" (1216604928)
+00:21:13.669 --> 00:21:33.959
+Documentation TVR being time variant routing, data model in yang. And I just got the problem of the time zone thing, the time reference, which actually doesn't fit right now with the, the, the data model. So I'll keep this to see if you're interested.
+
+69 "Side Meeting2" (1216604928)
+00:21:33.959 --> 00:21:49.259
+But we'll, we'll face, you know, time references and time zones, things in space that currently all the GPL people, you know, manage very well, but in our protocols, this is like unknown territory.
+
+70 "Side Meeting2" (1216604928)
+00:21:49.259 --> 00:22:07.499
+So next steps is, get, we just got additional data recently from We do another pass. We want to estimate needed storage size, use round trip data path into our testbed to simulate.
+
+71 "Side Meeting2" (1216604928)
+00:22:07.499 --> 00:22:23.099
+You know all the stuff that we've been working on. I hope that this will be a good input for a discussion on scheduling, planning, you know, protocol RTT, you know, all those stuff. TVR work.
+
+72 "Side Meeting2" (1216604928)
+00:22:23.099 --> 00:22:39.179
+And I was thinking of training an AI model to predict the next windows, just for the fun of it. Acknowledgements, Roy Ladden and SL were really helpful in in in the study.
+
+73 "Side Meeting2" (1216604928)
+00:22:39.179 --> 00:22:59.179
+Any question, comments? Give me a sec. I'll see if I Yeah, go ahead. I really like it Mark. Really nice, really interesting. Things it would have been nice to see is.
+
+74 "Side Meeting2" (1216604928)
+00:22:59.179 --> 00:23:26.879
+A bit more about the characteristics as in the data rates achievable over the links, the directionality. I know you say some of them are a full duplex. Are they truly symmetric? I tried to get into the maths a bit more. I think it'd be really interesting. Yeah we have that data and the it's it's roughly pretty constant yeah for each lengths.
+
+75 "Side Meeting2" (1216604928)
+00:23:26.879 --> 00:23:46.879
+But, we we've been doing this for the last, you know, month or so and and we just concentrate on on getting the knitted part and you know to getting the alignment before you worry about the three. Yeah yeah yeah but there's you're, you're right for, e.g., what I just said about.
+
+76 "Side Meeting2" (1216604928)
+00:23:46.879 --> 00:24:09.889
+Yeah. So that was my follow on question is, is data storage is effectively bandwidth through time. Yep. So that's what they do right now. Yeah exactly, so so understanding the amount of capacity required in order to achieve bandwidths that are useful is a really interesting calculation. But you haven't got that.
+
+77 "Side Meeting2" (1216604928)
+00:24:09.889 --> 00:24:24.899
+You're heading that way so great yeah yeah it's a rich data set to to play with and to do additional stuff. Are you going to make Sorry, I'm monopolizing the the questions. Are you going to make your manipulated data set available?
+
+78 "Side Meeting2" (1216604928)
+00:24:24.899 --> 00:24:48.068
+Let me answer the question later. I'll need to ask the Yeah you don't have to go. Yeah, understood. Thank you. If, if, you know, what are the the appropriate things to do? I Do I see sorry can you go ahead.
+
+79 "Sauli Kiviranta" (1169202944)
+00:24:48.068 --> 00:25:05.629
+Yes, I had the same question about the data sets about the raw data and manipulated data because it looks like you have a very, very good data sets coming, so to establish a standard candle that we can all test against and also validate the results, so if if you can figure out if this can be shared with.
+
+80 "Side Meeting2" (1216604928)
+00:25:05.629 --> 00:25:28.789
+Amazing sure we'll follow up on the mailing list sure Perfect. Thank you. Interesting, useful or ok?
+
+81 "Side Meeting2" (1216604928)
+00:25:28.789 --> 00:25:38.429
+Mark, your mic is off.
+
+82 "Side Meeting2" (1216604928)
+00:25:38.429 --> 00:25:57.749
+Thank you. Next, is Adulpho. You may remember he presented last ITF side meeting, deep space side meeting. Last that was the last one, right? Or the one that was a previous anyway, sometime.
+
+83 "Side Meeting2" (1216604928)
+00:25:57.749 --> 00:26:16.979
+So he wrote a workbench and I really want to advertise it because this is how with the quinn, quick stack, you could simulate you know delays for like hours, days, simulate network conditioning like.
+
+84 "Side Meeting2" (1216604928)
+00:26:16.979 --> 00:26:36.059
+Packet loss, reordering, duplicates, all that stuff and with time warm, so you don't have to wait ten days to get the results, you get it in a 2nd or two. Really? And it's, the way you simulate is like a little JSON file that you set your, your.
+
+85 "Side Meeting2" (1216604928)
+00:26:36.059 --> 00:26:56.059
+Your parameters and you just do the simulation, so if you really want to practice and see things about quick, you know, this is really great and also. Thank you. So, yeah, this quick work could workbench is a tool to simulate quick traffic in space, in deep space.
+
+86 "Side Meeting2" (1216604928)
+00:26:56.059 --> 00:27:20.909
+And the idea is that you can play with different transport configs under different network conditions to see how quick would be behave in that scenario with the idea that, yeah, trying to find a good set of parameters that you know can work in your in your circumstances. So.
+
+87 "Side Meeting2" (1216604928)
+00:27:20.909 --> 00:27:37.409
+I guess the why we could go to the why, which is kind of, well after everything Mark said clear that we we are investigating how quick would work over IP.
+
+88 "Side Meeting2" (1216604928)
+00:27:37.409 --> 00:27:52.499
+In native space, and then as to what if you can go to the next slide Mark. So as I mentioned it's a command line tool. It makes requests.
+
+89 "Side Meeting2" (1216604928)
+00:27:52.499 --> 00:28:12.499
+Tool from a well it simulates requests from a client to a server and retrieves responses from it. You can configure how many requests requests to make and the size of the response. There's NO real I/O going on, but, so that allows us to have instant simulation with you.
+
+90 "Side Meeting2" (1216604928)
+00:28:12.499 --> 00:28:31.199
+Which rtps if we want, and we are generating a PCAP file so you can analyze traffic using standard tools such as wireshark. It's open source, so the link is there to to go and play with it if you're interested, it's really in rust, so.
+
+91 "Side Meeting2" (1216604928)
+00:28:31.199 --> 00:28:47.369
+It's, yeah, the package manager, is wonderful. So if you have that, you can run this without any any problems. So what's new? We added explicit net congestion notification.
+
+92 "Side Meeting2" (1216604928)
+00:28:47.369 --> 00:29:06.299
+To the simulated network and the idea behind that is that that might be an interesting mechanism to do congestion control. And how that specifically would work is something I haven't thought much about. I I hope Mark has ideas.
+
+93 "Side Meeting2" (1216604928)
+00:29:06.299 --> 00:29:25.709
+But we in in any case already implemented a congestion controller that that reacts to ECN congested events and ignores packet loss. So you can use that for.
+
+94 "Side Meeting2" (1216604928)
+00:29:25.709 --> 00:29:43.979
+Kind of experimenting with this kind of congestion controller and seeing if it's really as useful as you would hope. And having that we went on to simulate this and, so these are like the, if you are planning to.
+
+95 "Side Meeting2" (1216604928)
+00:29:43.979 --> 00:30:03.979
+Reproduce the results yourself. These are interesting things you need to know like what to configure, basically tell the network to, to mark some packets with the congestion experienced code point. You need to configure the quick client and server to use the.
+
+96 "Side Meeting2" (1216604928)
+00:30:03.979 --> 00:30:20.939
+The special congestion controller and then you need to use CLI flags to to generate a 10 mb response because normally responses are so small that yeah you need so little bandwidth that it doesn't matter much if the congestion controller kicks in.
+
+97 "Side Meeting2" (1216604928)
+00:30:20.939 --> 00:30:40.939
+And, as to the results, well, it's basically show the if you go to the next slide, you can see that it's a bit small, in any case so we try I I just wanted to showcase that you can observe differences if you.
+
+98 "Side Meeting2" (1216604928)
+00:30:40.939 --> 00:31:07.349
+You compare 1 % of congestion experienced packets and 10 %. So you see that the throughput, goes down in the 1st the 1st block you see that it takes well 27000 rtts approximately till, NO 2700. And the other one is two about 2000 more.
+
+99 "Side Meeting2" (1216604928)
+00:31:07.349 --> 00:31:23.999
+So you can see that having more congestion experienced packets even though doesn't make any difference in packet loss, the congestion controller will throttle the, the bandwidth used by the, by the sender of the, of the packets.
+
+100 "Side Meeting2" (1216604928)
+00:31:23.999 --> 00:31:41.339
+Which is what we wanted to know, like this system is working now and now we can use this to experiment with maybe more realistic scenarios and more maybe iterate on which congestion controller mechanism to use.
+
+101 "Side Meeting2" (1216604928)
+00:31:41.339 --> 00:32:00.959
+Okay. So that's, that's the update on workbench. Questions? Questions? Yep. Sorry. Rick Taylor again.
+
+102 "Side Meeting2" (1216604928)
+00:32:00.959 --> 00:32:20.959
+I, I just it's a general question. I 1st off, great, this is really nice. It's nice to see Russ out there. Where are we Have we done much thinking about where we're expecting congestion in these networks? I mean that if you think about the, the, the long haul links, the director earth all.
+
+103 "Side Meeting2" (1216604928)
+00:32:20.959 --> 00:32:41.729
+You know, the, the links between earth and whatever's in relay. They're pretty tied down in terms of, what's flowing across them. Where is a general question, where are we expecting the congestion to occur? And so.
+
+104 "Side Meeting2" (1216604928)
+00:32:41.729 --> 00:32:59.849
+So if I understood correctly what kind of the, well, it's a difficult question to answer because I always, when I get these kind of questions, I say ask Mark. And now he says ask me. Okay, let's do it.
+
+105 "Side Meeting2" (1216604928)
+00:32:59.849 --> 00:33:18.659
+When you talk about, transport in on internet transport, you're talking about congestion, right? So, but what we actually want is flow control instead of congestion control and so the congestion actually here is kind of a.
+
+106 "Side Meeting2" (1216604928)
+00:33:18.659 --> 00:33:34.889
+Actually not misnomer in some ways, but what ECN would enable you to actually manage the buffer space because e.g. if a relay or intermittent node actually is getting full, it could send ECN signaling.
+
+107 "Side Meeting2" (1216604928)
+00:33:34.889 --> 00:33:54.889
+To the sources to pay is done, right? Yeah. So is this congestion? I understand. So you're using the ECM mechanism in order to provide pushback to the sender to say for flow control reasons. Yes.
+
+108 "Side Meeting2" (1216604928)
+00:33:54.889 --> 00:34:18.799
+With his own you know special environment, right? Because the ECN will take time to get back to the source. So is that, so it needs to be kind of predictive in advance to make good use. So, so that was just more like ok we have this capability within already within IP and quick.
+
+109 "Side Meeting2" (1216604928)
+00:34:18.799 --> 00:34:35.519
+Like, could we use it? But is this going to be used? It's in a different it's a deployment consideration, but we we had we now have a a solution environment to try it out and see, you know, doing it.
+
+110 "Side Meeting2" (1216604928)
+00:34:35.519 --> 00:34:55.519
+I just wanted to remind people that the way ECN works, you have to have reverse traffic to signal on. If you're sending traffic into a relay that's buffering and there's nothing coming back, you can't see anything. So that's not exactly the traditional use of congestion control.
+
+111 "Side Meeting2" (1216604928)
+00:34:55.519 --> 00:35:00.989
+Okay.
+
+112 "Side Meeting2" (1216604928)
+00:35:00.989 --> 00:35:20.989
+Okay. There was a discussion about not measuring loss anymore with this renewal algorithm, right? I was like, do you experience variations of loss and in space like you have kept dust or something that will cause loss in space? Do you have that?
+
+113 "Side Meeting2" (1216604928)
+00:35:20.989 --> 00:35:27.119
+And and do you have typical durations during which this loss will happen?
+
+114 "Side Meeting2" (1216604928)
+00:35:27.119 --> 00:35:47.119
+Good question, so I guess you're talking about my previous presentation or so or or whatever, one thing that people, so there's some basic bit error rate in space, but what the.
+
+115 "Side Meeting2" (1216604928)
+00:35:47.119 --> 00:36:11.749
+CSDS frames, the link layer actually has a, you know, two layers of, of FEC codecs in it. So the actual frame error rate is, is actually pretty low. The bit error rate maybe high, but the frame error rate is pretty low, but that doesn't, doesn't change the factor.
+
+116 "Side Meeting2" (1216604928)
+00:36:11.749 --> 00:36:34.769
+Well, that that was I was thinking about because I was thinking about if you have this this cloud of dust or something, it's it's it will last more than one frame, meaning the bitterize can understand it's it's not very important but the the frame error may happen.
+
+117 "Side Meeting2" (1216604928)
+00:36:34.769 --> 00:36:55.886
+And for a while, and so, yeah, there was more question and didn't have any answer on that but space. Well, NO NO, it's just it's just a matter of, you know, you're coming to shake on on Friday and and we're sending, we we are looking looking at fake between frames.
+
+118 "Marshall Eubanks" (1603073536)
+00:36:55.886 --> 00:36:58.284
+And so that the.
+
+119 "Marshall Eubanks" (1603073536)
+00:37:00.906 --> 00:37:11.084
+Can I say something about congestion control? Can you hear me 1st of all? It's Marshal events here.
+
+120 "Side Meeting2" (1216604928)
+00:37:11.084 --> 00:37:13.605
+Go ahead. Please go ahead.
+
+121 "Marshall Eubanks" (1603073536)
+00:37:13.605 --> 00:37:24.869
+Okay, so something that we've encountered that is a rather somewhat different kind of congestion control and but it makes mission, you know, UPS people very nervous is the computer that's running all of this.
+
+122 "Marshall Eubanks" (1603073536)
+00:37:24.869 --> 00:37:44.189
+Can become con overloaded and that's a very serious problem where that computer is also controlling spacecraft stuff and I know that they get very nervous about this and so I can easily see them saying, we just don't have the spare capacity right now to process these incoming packets through.
+
+123 "Marshall Eubanks" (1603073536)
+00:37:44.189 --> 00:38:01.139
+You know, bundles or whatever they are and so we're gonna, we wanna send a signal back saying stop or slow down or send bless or or whatever. I can easily see them wanting to do that because I know.
+
+124 "Marshall Eubanks" (1603073536)
+00:38:01.139 --> 00:38:26.249
+In other circumstances, they already want to do that. And in fact, they generally want a kill switch where they have to, they can just say, you know, just stop this turn it off, you know. Because if you're about to do a say a burn or something, you really don't want your computer to be overloaded. And so I think I think they would like to use that actually if they had that capacity and they knew how to use it, they would like to use that.
+
+125 "Side Meeting2" (1216604928)
+00:38:26.249 --> 00:38:47.591
+So our experience with saying NO, generally is that saying NO congests the network further and causes more problems and doesn't actually cause people to stop. We now consider this DOS protection, and so nodes must be ready to discard all possible incoming traffic. That's just the way I.
+
+126 "Marshall Eubanks" (1603073536)
+00:38:47.591 --> 00:38:48.265
+The world.
+
+127 "Side Meeting2" (1216604928)
+00:38:48.265 --> 00:38:59.984
+I'd also like to suggest the use of scale out architecture and containers wherever possible.
+
+128 "Marshall Eubanks" (1603073536)
+00:38:59.984 --> 00:39:08.187
+But isn't Is it dropping all incoming packets? I mean, shouldn't you notify that upstream back to the sender?
+
+129 "Side Meeting2" (1216604928)
+00:39:08.187 --> 00:39:23.663
+No, again, if you're getting DOS attacked, which is distinctly a possibility if you're on the public internet, most of that stuff is going to spoofed addresses anyway. So don't we're not talking about the DOS on the internet here.
+
+130 "Marshall Eubanks" (1603073536)
+00:39:23.663 --> 00:39:32.403
+Yeah, this is this is spacecraft stuff. I'm talking about Mars orbit or something. If it's getting dossed you got bigger problems.
+
+131 "Side Meeting2" (1216604928)
+00:39:32.403 --> 00:39:53.670
+Okay. Ground sources, then, you know, just ignore them. It's they're not gonna throttle, they're not gonna be effective in in shutting up so just ignore their traffic. Thank you very much.
+
+132 "Side Meeting2" (1216604928)
+00:39:53.670 --> 00:40:11.400
+I, I like this work because there's always, you know, interesting perspective on how to do things. Next one is Adulpho again and the reason was just that, you know, not to change the presenters.
+
+133 "Side Meeting2" (1216604928)
+00:40:11.400 --> 00:40:28.770
+Short presentation on netconf over quick? Yeah, this will be the last one, don't. So, yeah, as the title says we're playing with network netconf over quick. We have a test implementation of it.
+
+134 "Side Meeting2" (1216604928)
+00:40:28.770 --> 00:40:45.180
+And based on the RC draft that is currently online. So let's start with why, why are we doing this? So I think the most.
+
+135 "Side Meeting2" (1216604928)
+00:40:45.180 --> 00:41:02.520
+It kind of speaks for itself that since netconf is defined over SSH and TLS, you don't want to use that in this space, and then since we are using quick, then we should try to get netconf over quick.
+
+136 "Side Meeting2" (1216604928)
+00:41:02.520 --> 00:41:20.310
+And use it for network management, which you will need in in this space. So to let tell a little bit about quick just in case, quick is a reliable transport, so it's been designed to replace TCP, it's already being used.
+
+137 "Side Meeting2" (1216604928)
+00:41:20.310 --> 00:41:40.310
+Before coming here I checked the cloud 1st statistics for October and it's powering a 3rd of HTTP requests. So because HTTP three goes over quick. And one of the key features is that it offers multiplexed data streams out of the box which we can use.
+
+138 "Side Meeting2" (1216604928)
+00:41:40.310 --> 00:42:00.270
+To it's pretty useful for the mapping of netconf over quick. So you can have unidirectional streams and B directional streams and they can be either initiated by the client or the server. They're very cheap, which is nice. So you can, as I mentioned here, you can set start.
+
+139 "Side Meeting2" (1216604928)
+00:42:00.270 --> 00:42:17.760
+And close a stream in the same packet, including the payload, if it, if it fits obviously and it will be just a single message. There's, there's NO additional latency whatsoever. Which means that we can use streams as a way to.
+
+140 "Side Meeting2" (1216604928)
+00:42:17.760 --> 00:42:33.090
+To map netconf stuff as to the mapping mapping itself, so the let's go to the next slide please. So the mapping is, is currently still a matter of discussion.
+
+141 "Side Meeting2" (1216604928)
+00:42:33.090 --> 00:42:50.190
+And this is not what I'm, talking about here is not yet incorporating the RFC draft but there are like four elements. One is authentication, which we since quick uses TLS for the handshake, we can use TLS certificates for that.
+
+142 "Side Meeting2" (1216604928)
+00:42:50.190 --> 00:43:06.270
+And then there are mostly three kinds of interaction between the client and the server at the beginning of the connection, there's a capability negotiation through this hello message, so the server and the client send a hello message to the to each other.
+
+143 "Side Meeting2" (1216604928)
+00:43:06.270 --> 00:43:21.750
+So what we thought is we can open a bidirectional stream started by the client and exchange the hello message through that using XML piece of text, and you don't need any kind of explicit framing, just.
+
+144 "Side Meeting2" (1216604928)
+00:43:21.750 --> 00:43:40.020
+Reading the stream till it finishes, it tells you you have read everything because it's a stream for a single message. Then, once you have this 1st step done, there are like request response messages, RPC calls.
+
+145 "Side Meeting2" (1216604928)
+00:43:40.020 --> 00:43:58.770
+And each one of those gets its, its own bidirectional stream started by the client saying like here's the RPC call. And, again, you get the response from the server and framing is implicit because when the stream is, is finished, you know that.
+
+146 "Side Meeting2" (1216604928)
+00:43:58.770 --> 00:44:13.770
+The, there's nothing else to, to read. And finally notifications, which is a mechanism in Netconf to subscribe to information in that case.
+
+147 "Side Meeting2" (1216604928)
+00:44:13.770 --> 00:44:32.400
+What we came up with is that the server will open a unidirectional stream when the client subscribes and since all notifications go through the same stream, in that case we will need some kind of framing and for that purpose we would reuse the mechanism.
+
+148 "Side Meeting2" (1216604928)
+00:44:32.400 --> 00:44:52.400
+Used by netconf over SSH, which is already in an RFC. So with this in mind, we created the test implementation is a fully working netconf over quick implementation proxying to an existing implementation just to avoid.
+
+149 "Side Meeting2" (1216604928)
+00:44:52.400 --> 00:45:11.430
+Reinventing the wheel, obviously it's not probably not how you would do it for real, but it's enough to, showcase that the netconf over quick bits is working. So what we're doing is we run a netconf server, we run a netconf line.
+
+150 "Side Meeting2" (1216604928)
+00:45:11.430 --> 00:45:27.360
+And we let the traffic go through our code, which is the blue part so you use over SSH for that part of the connection, which is already kind of what already exists, and our part will proxy that.
+
+151 "Side Meeting2" (1216604928)
+00:45:27.360 --> 00:45:43.020
+Through a network of our quick kind of showing that this this can work in practice. I have a recorded demo because I don't dare do a live demo. We never know what's going to happen.
+
+152 "Side Meeting2" (1216604928)
+00:45:43.020 --> 00:46:02.580
+I hope Mark has it ready. Oh, I forgot. Oh, maybe I should have done the live demo. What or maybe I could transfer you to Oh, let me share my screen. I can I can play it from here. Could you?
+
+153 "Side Meeting2" (1216604928)
+00:46:02.580 --> 00:46:17.730
+Let's see I'm not used to give me a sec. I think it is working. Do you have a alright, i'm sharing my screen. Oh cool. Are you seeing it? Oh, fantastic.
+
+154 "Side Meeting2" (1216604928)
+00:46:17.730 --> 00:46:34.920
+Okay, so, let's put this on the full screen. Yeah, you see here two, apps, that's a one time with two panels. On the top, you, there's a command ready to run the server.
+
+155 "Side Meeting2" (1216604928)
+00:46:34.920 --> 00:46:54.920
+And on the panel below you see a command ready to run the client. So let's do that and afterwards we will do the netconf stuff. So this is now, our code that implements netconf over quick and it's also written in rust so you can.
+
+156 "Side Meeting2" (1216604928)
+00:46:54.920 --> 00:47:12.360
+See that the cargo stuff is, is there. So now we switch to a different tab where we are going to run the netconf client above and connecting to port 8081, which is our local.
+
+157 "Side Meeting2" (1216604928)
+00:47:12.360 --> 00:47:30.090
+So it was not the real netconf, server, but our server that would internally proxy stuff to the real netconf server. And this completes successfully after doing many requests in the background, and then you can also subscribe to events.
+
+158 "Side Meeting2" (1216604928)
+00:47:30.090 --> 00:47:46.020
+So in the panel below, we are going to connect again and you we will see a notification up here saying like, hey, someone just started a new session that that shows that subscriptions are working.
+
+159 "Side Meeting2" (1216604928)
+00:47:46.020 --> 00:48:06.020
+And also normal messages are working because otherwise you would have been unable to receive the ok results from subscribing. And when you exit, you'll get another another notification saying that the, that the session has ended. So this is a very simple small demo to to give you.
+
+160 "Side Meeting2" (1216604928)
+00:48:06.020 --> 00:48:23.130
+Idea that this is really, really working. With that we can get back to the slides if you don't mind Mark. Yeah.
+
+161 "Side Meeting2" (1216604928)
+00:48:23.130 --> 00:48:42.390
+And we can get to the last one. So a few details about implementation, so it's it's open source, it's available on GitHub with usage instructions. We're using a library called Queen, same as for Quinn workbench.
+
+162 "Side Meeting2" (1216604928)
+00:48:42.390 --> 00:49:01.710
+We still need to test this more extensively like are there any edge cases that break it before you start saying, hey, we can use this for a real RFC? And also we need to test that the protocols works with delays and disruptions, which should work out of the box because that part is handled by by quick.
+
+163 "Side Meeting2" (1216604928)
+00:49:01.710 --> 00:49:21.710
+But it's always good to, to test to know for sure. So that's it and if there are questions. Hi, so Wes Hardiker and I'm the one responsible for the SSH protocol framing, was my fault at doing security now.
+
+164 "Side Meeting2" (1216604928)
+00:49:21.710 --> 00:49:45.140
+And so if you're using the same framing, the reason why there's that really weird double bracket thing that we used in SSH was because we had to come up with a sequence that was illegal to transfer over SSH. So if you're doing netconf over quick, you need something similar so that you can't have clients inject those accidentally because it would have been escaped part.
+
+165 "Side Meeting2" (1216604928)
+00:49:45.140 --> 00:50:06.530
+Properly and over SSH and then you would have unescaped it and then sent it over, and so you could inject malicious quick framing if you're not careful, but because quick already has framing, it's probably not a problem. SSH doesn't, this is just a warning to think about it. Thank you.
+
+166 "Side Meeting2" (1216604928)
+00:50:06.530 --> 00:50:32.190
+Yeah you know if you're on the, on the Webex and you have questions, please speak as I'm not really Okay thank you next presentation, I actually switched the last two because.
+
+167 "Side Meeting2" (1216604928)
+00:50:32.190 --> 00:50:49.050
+We were expecting a new version of a slide deck on my request by Jan so to give her a few times and I I received it and I need to push it. So in the meantime, so as if you can start.
+
+168 "Side Meeting2" (1216604928)
+00:50:49.050 --> 00:51:09.050
+Thanks everyone. My name is Sohas. I'll be talking about the new kid in the block called Media Quick that's a working group that's been formed at idea for the last couple of years. It's I'm trying to see after the deep space requirements, trying to think about how media quick or media quick works and it looks like.
+
+169 "Side Meeting2" (1216604928)
+00:51:09.050 --> 00:51:29.050
+There's a quite a bit of properties that the protocol provides that can help in deep space communications. Like one one can envision a lot of applications that can be built using restful HTTP style end to end request response kind of protocol but but there are large classes of applications that where HTTP might.
+
+170 "Side Meeting2" (1216604928)
+00:51:29.050 --> 00:51:49.050
+Not be a good fit either because of latency requirements or the scalability requirements. That's where something like media or quick comes into the picture. Media or quick at a very high level is a low latency, highly scalable published subscribe based delivery transport, which allows like the entities called publishers to publish objects to large scale of subscribers.
+
+171 "Side Meeting2" (1216604928)
+00:51:49.050 --> 00:52:21.080
+And the object that's that's being published are uniquely named so that and they have item put in the properties so that once an object is published with a particular name, you cannot change the contents of the object. And, and the way the objects get delivered within the quick in the media quick delivery network is by intermediary notes or the media quick relays. Also the media quick is built on stored for forward kind of paradigm, which I think one of the properties that were really helpful in the deep space communication. Even though.
+
+172 "Side Meeting2" (1216604928)
+00:52:21.080 --> 00:52:47.480
+One one disclaimer is that even the word media has been using media quick within the mock working group we are considering to change the name media because when we started the audio and video applications were the main applications that were considered but over a period of time I am kind of applications as well as logging metrics and even the analytics kind of applications are also started using media quick as the as the delivery transport because I.
+
+173 "Side Meeting2" (1216604928)
+00:52:47.480 --> 00:53:04.530
+But they want this, the network to cache the things and have control over everyone to have control over that one at the same time they wanted to run different applications with different latency requirements and, and, and this one protocol kind of helped fit both the properties there.
+
+174 "Side Meeting2" (1216604928)
+00:53:04.530 --> 00:53:24.530
+Next slide and at a very high level how this works is that the in this picture if you look at it, there are these publishers on the one end on their subscribers on the other end, and the intermediately called mock release. The publishers basically announcement I'm in I'm ready to publish objects.
+
+175 "Side Meeting2" (1216604928)
+00:53:24.530 --> 00:53:44.520
+Under the container called a track, and as any subscriber who are interested they issue a request and the relay network knows how to find where the publisher is and whenever the objects get gets published from the publisher, the relay networks knows how to fan out to the set of publishers.
+
+176 "Side Meeting2" (1216604928)
+00:53:44.520 --> 00:54:04.520
+The important thing about is that when the publishers publish those objects, as I said, they can also specify what is called as a cache caching time for each object, that allows a relay to optionally cache the object if it's allowed to cache and and it expires the object once that caching is time is expired.
+
+177 "Side Meeting2" (1216604928)
+00:54:04.520 --> 00:54:10.170
+That I'll talk about with that in the next slide a bit more.
+
+178 "Side Meeting2" (1216604928)
+00:54:10.170 --> 00:54:30.170
+This is the caching where the publisher, when it publishes objects, it puts how long the relay should hold the cache and really holds the cache until the timer expires, and whenever a subscriber, which is very common in the deep space communication that one of the things, the network changes or there's intermittent communication, they come back later, they ask for that object. If they publish.
+
+179 "Side Meeting2" (1216604928)
+00:54:30.170 --> 00:54:50.960
+Sure has put the right expiry timeout then objects will be available when, when they come and and since all the relay relays work in a similar way, the objects can get cached in multiple places. So even if there the change in the dynamically dynamic changes in the topology of the real real network, you still be able to retrieve those objects when you.
+
+180 "Side Meeting2" (1216604928)
+00:54:50.960 --> 00:55:12.800
+Come online later. Next slide, please. This, this is kind of showing that, you know, the, because the mock protocol is kind of stored and forward and it it works on quick and the mock, the mock field is sort of two main purposes. One is that they cache.
+
+181 "Side Meeting2" (1216604928)
+00:55:12.800 --> 00:55:32.800
+The thing optionally as and 2nd thing it provides a forwarding table between the publishers and subscribers. A nice thing about the the topology here is that a given mock relay can connect to multiple mock release, it does not matter, and as the, as notes can come and go, you still have a way if there's a path between the publisher and the subscrib.
+
+182 "Side Meeting2" (1216604928)
+00:55:32.800 --> 00:55:52.800
+But you get those things and their cached in the network as well. And the same protocol can can protocol can run across different operating domains. The can be provided by different companies, different vendors and still have the properties of accessing the object because the object is uniquely named and you.
+
+183 "Side Meeting2" (1216604928)
+00:55:52.800 --> 00:56:03.840
+You can request for it regardless of who's providing the real network at any point either in earth or Leo satellites or on surface of the for that matter.
+
+184 "Side Meeting2" (1216604928)
+00:56:03.840 --> 00:56:23.840
+Next slide please. Just just to summarize why mock, we know deep space has intermittent communications or connections where things go and come off. The stored functionality that's inbuilt with mock allows subscribers to come fetch the objects whenever they come online, whenever they get a chance to.
+
+185 "Side Meeting2" (1216604928)
+00:56:23.840 --> 00:56:43.840
+Connect to the network, in the same way, we need multiple operators operating these really networks and by the nature of this object naming, and it provides a unique naming across different operators. It does not matter, the publisher sets the name and the name stays throughout the network. So it doesn'.
+
+186 "Side Meeting2" (1216604928)
+00:56:43.840 --> 00:57:14.480
+Doesn't matter who's operating, you still can subscribers can still request and fetch those objects and all these long delays and are constantly changing the network topologies can get benefit from of the native quick functionalities like network resiliencies against the multi path or connection migration and also the or the name data network kind of overlay that objects provide with naming will provide a way regardless of what's the network is, if there's a path and you know the name of the object you can always.
+
+187 "Side Meeting2" (1216604928)
+00:57:14.480 --> 00:57:33.900
+I think that that should be all. I'm happy to we we have quite a bit of experience in running multiple type of applications on mock and also using a couple of if anyone has any questions on quick or quick i'm happy to answer.
+
+188 "Side Meeting2" (1216604928)
+00:57:33.900 --> 00:57:56.000
+Questions? Rick Taylor, yeah, really interesting. Have you looked at bundle protocol? Yes. Definitely. I I was presenting this to Colin and Colin made a made a joke saying that why why didn't we use a bundle protocol for mock? Yes. But yes, I think the the property of the store and forward has been a good thing.
+
+189 "Side Meeting2" (1216604928)
+00:57:56.000 --> 00:58:14.850
+And, and I'm not sure why we're not looking at bundled protocol or why not but this we thought this has store four properties at the same time using IP and also properties of quick kind of good match. It's interesting and it's introduced me to to Mark, which is great and I think Mark is great technology.
+
+190 "Side Meeting2" (1216604928)
+00:58:14.850 --> 00:58:30.060
+I think the problems you as you start to do more work on this, you'll start to see some of the reasons Bundle Protocol does some of the things it does, the ability to time out data, things have different lifetimes.
+
+191 "Side Meeting2" (1216604928)
+00:58:30.060 --> 00:58:50.060
+I know there's an end to end storage drafting place for mock at the moment, but being able to do integrity checking and verification and confidentiality checking separately across the network is really important for these environments. So.
+
+192 "Side Meeting2" (1216604928)
+00:58:50.060 --> 00:59:08.130
+Yeah, this is there there is parallel work that's already happening. Please come and join in the DTN working group and and see what we're doing. One thing I like to add is this is, you know, one thing I like to add is that Mark also provides objects.
+
+193 "Side Meeting2" (1216604928)
+00:59:08.130 --> 00:59:28.130
+To be set a time out into how long it gets cached. I think I think these concepts are very powerful concept hence, I think multiple people are trying to get it. Absolutely. Storing forward is, is, is a great concept and there's, there will always be another approach to storing forward, so yeah NO really interesting, thank you. So Rick, I'll I'll be.
+
+194 "Side Meeting2" (1216604928)
+00:59:28.130 --> 00:59:48.960
+I'll be ok if I go to the DTN working group and then start taking the time saying, please people go to the IP yes. And I've said that Rick DTN chair. Yes, and I've said so before there are there are useful things that happen in this comms in this group.
+
+195 "Side Meeting2" (1216604928)
+00:59:48.960 --> 01:00:08.960
+And in other groups in the IETF that are relevant to DTN and vice versa. I could have sworn we were asked to not talk about BP and start politics here. My exact I'm not I'm gonna, I'm gonna end this conversation after this comment. My comment was putting it in a large document in a slide deck saying.
+
+196 "Side Meeting2" (1216604928)
+01:00:08.960 --> 01:00:39.570
+The purpose of the group was my objection. Oh, ok, this is out of scope. We don't want to discuss the charter. Any other questions about not I have one but remote I'm not looking at this screen but I actually sent you a question on mailingness.
+
+197 "Side Meeting2" (1216604928)
+01:00:39.570 --> 01:00:58.500
+Tell me if I'm wrong, but if you're, you're using mock relays, each relay will actually has its own quick session between the relays. So the data in on flight in a relay will actually being decrypted, right? So it won't be.
+
+198 "Side Meeting2" (1216604928)
+01:00:58.500 --> 01:01:18.500
+Encrypted end to end. Right. Is it going to Because I was thinking about mask, where it's tunning, therefore the end to end encryption is actually kept, right? Yeah. Am i wrong? You're totally right in understanding that mock is in protocol.
+
+199 "Side Meeting2" (1216604928)
+01:01:18.500 --> 01:01:39.660
+So the way the mock looks at it is that it's an object based encryption, not a tunnel based encryption, and that that way in applications can use any lightweight, that's what we have one draft that talks about how do you do lightweight encryption. Yeah, yeah, yeah. It's called secure objects. It's based on another idea of.
+
+200 "Side Meeting2" (1216604928)
+01:01:39.660 --> 01:01:59.660
+So the idea so that kind of because mock servers also supports use cases like which are DRM protected use cases. That does not benefit from encryption or having a tunneling mechanism. So that's that's the reason why it's not in the core protocol, but they, you can always extend mock to basically saying that if you want a profile of mock that supports.
+
+201 "Side Meeting2" (1216604928)
+01:01:59.660 --> 01:02:24.590
+I think that's very well very welcome within the yeah so I I read your, your secure objects and I was thinking either it should be mandatory or if it's not, then there should be a big, you know, warning somewhere that says, you know, on flight there will be decrypted then you know, is this what you want?
+
+202 "Side Meeting2" (1216604928)
+01:02:24.590 --> 01:02:43.440
+Or not, right? Something like that because, you know, we're kind of assuming quick is kind of an end to end encrypted and now it's kind of breaking the thing, at least, you know. Yeah, it's the whole. Other questions?
+
+203 "Side Meeting2" (1216604928)
+01:02:43.440 --> 01:03:05.660
+And a lot just about not just about mock if like we have an extensive experience using using quick for health using quick constructs so any questions later I'm happy to answer that too. Okay last presentation.
+
+204 "Side Meeting2" (1216604928)
+01:03:05.660 --> 01:03:18.895
+Jan is going to, I hope that I have the right set of slides now, Yan, are you on.
+
+205 "Yihan Zhu" (3494967552)
+01:03:18.895 --> 01:03:21.648
+Online. Can you hear me?
+
+206 "Side Meeting2" (1216604928)
+01:03:21.648 --> 01:03:28.790
+Oh yes. Yes, that's the right version. You have the floor. Tell me when you want to change it.
+
+207 "Yihan Zhu" (3494967552)
+01:03:28.790 --> 01:03:47.300
+The topic of my report today is IPv six plus network architecture for deep space. The next one at the last IETF 120 site meeting we introduced a new SRV.
+
+208 "Yihan Zhu" (3494967552)
+01:03:47.300 --> 01:04:07.300
+Six space store carry and forwarding for deep space and got some valuable results after our prototype validation. 1st, we will review the main ideas and the conclusions. At this meeting we will give a whole IPv six network architecture for deep space. 1st, we will introduce our test of quick and.
+
+209 "Yihan Zhu" (3494967552)
+01:04:07.300 --> 01:04:27.300
+The SRV six based operation. Next we will present a CJR based routing approach to generate SRV six segment list for link handover. At last, we will give the new scenarios for next generation networks and we will give the design selection why we choose IP.
+
+210 "Yihan Zhu" (3494967552)
+01:04:27.300 --> 01:04:52.340
+Network architecture for deep space and the next one. After the successful implementation of the store carry and forward paradigm in the IP forwarding plane, we compare the existing architecture with the deep space IP architecture for the following functional consistency. In the last meeting, we mainly introduced the functionalities of four by hop transmission of store carry.
+
+211 "Yihan Zhu" (3494967552)
+01:04:52.340 --> 01:05:15.930
+And forward and the confirmation retransmission. In this meeting we will focus more on adaptive routing and the socket interface for applications and the next one based based on a typical space scenario, we set up the about five node topology to conduct.
+
+212 "Yihan Zhu" (3494967552)
+01:05:15.930 --> 01:05:35.930
+File transfer tests, the three intermediate nodes implementary and forward functionality as an IP layer while the deep space terminal and the ground server run quick server and the client programs respectively to perform the file transfer tests. The round trip delay from the deep space terminal.
+
+213 "Yihan Zhu" (3494967552)
+01:05:35.930 --> 01:05:55.930
+To the ground server is 4 s. The purpose of the experiment is in scenarios with link disruptions, bars can be successfully delivered relying on the IP layer stock area and forward paradigm without depending on the quick timeout retransmission mechanism. And the parameters will.
+
+214 "Yihan Zhu" (3494967552)
+01:05:55.930 --> 01:06:17.030
+We said max idle timeout is to 10 min, initial RTT and the initial retransmit timer is 4 s large retransmit timer is at 06:16 seconds and we choose BBR as our congestion.
+
+215 "Yihan Zhu" (3494967552)
+01:06:18.900 --> 01:06:38.900
+And the next one, through our Q log analysis of the file transfer process, we found that after the link reconnection, the ACK return by the ground server includes 334 and the 2259 300 and the 34 is an ACK for the.
+
+216 "Yihan Zhu" (3494967552)
+01:06:38.900 --> 01:07:04.530
+The currently received packet while 2259 acknowledges packets that were previously not received. These packets were retransmitted by the IP store carrier and forward mechanism by the intermediate node rather than relying on quicks end to end retransmission. Next one. According according to the.
+
+217 "Yihan Zhu" (3494967552)
+01:07:04.530 --> 01:07:24.530
+Wash capture results, a link disruption occurred at 25 s and the link was restored around 210 s. The IP store carry and forward mechanism became retransmitting store packets with the next hop address is with.
+
+218 "Yihan Zhu" (3494967552)
+01:07:24.530 --> 01:07:49.070
+The next hop address in the encapsulated as a header as as the as this one and the last 3rd 08:48 bits are not all zeros indicating that these are packets stored locally before transmission around 212 s.
+
+219 "Yihan Zhu" (3494967552)
+01:07:49.070 --> 01:08:08.010
+The quick client returned the 1st ACK after the link recovery and the next one. However, in deep space networks due to the presence of the store carry and four mechanism, we will encounter the following.
+
+220 "Yihan Zhu" (3494967552)
+01:08:08.010 --> 01:08:28.010
+Problem. Quick refresmissions over a stock area and forward mechanism may result in invalid duplicate packets. How can we reconcile the reliability relationship between these two? To address this issue we conducted a modeling analysis as shown in the figure. T one to T four represent.
+
+221 "Yihan Zhu" (3494967552)
+01:08:28.010 --> 01:08:56.580
+And the round trip delays of each link segment. T disruption represents link disruption duration. T quick represents retransmission timer of the quick transport protocol. TSCF represents the delay introduced when intermediate nodes perform store carry and forward paradigm. This implies that packets maybe temporarily stored awaiting the appropriate time for forwarding.
+
+222 "Yihan Zhu" (3494967552)
+01:08:56.580 --> 01:09:16.580
+If the following condition is met, we can avoid the issue of duplicate packets caused by premature retransmission. Unnecessary retransmissions primarily stand from the quick timer being too short to accommodate the stock area and forward mechanism in deep space networks. And our solution is.
+
+223 "Yihan Zhu" (3494967552)
+01:09:16.580 --> 01:09:33.210
+Dynamically adjusting the quick retransmission timer since the values in the formula bar can be predicted in advance. We can dynamically adjust to the quick retransmission timer based on connection information to ensure that.
+
+224 "Yihan Zhu" (3494967552)
+01:09:33.210 --> 01:09:53.210
+To ensure that it does not trigger during the store carry and forward period. And the next one, in deep space networks, the communication windows between nodes are pre planned and theoretically the optimal.
+
+225 "Yihan Zhu" (3494967552)
+01:09:53.210 --> 01:10:13.210
+The optimal transmission parts between animals can be inferred from these context schedules. The left diagram is an example of a contact graph. In the diagram, nodes represent a contact in the contact plan that allows data transmission between two nodes. Links.
+
+226 "Yihan Zhu" (3494967552)
+01:10:13.210 --> 01:10:41.160
+Represents the storage time for data as a sending node one while waiting for the next contact transmission. Each route will include temporal storage indicating the data storage time as a note and transmission window defined as the start time of the 1st hop to the earliest enter amount the contacts.
+
+227 "Yihan Zhu" (3494967552)
+01:10:41.160 --> 01:10:57.300
+Traversed and volume defined as start time multiple rate and the best delivery time defined as the earliest time at which the destination node can be reached.
+
+228 "Yihan Zhu" (3494967552)
+01:10:57.300 --> 01:11:18.320
+And the next one, and the CGR framework is divided into three main parts, planning routing and forwarding. In the planning stage, a centralized entity computes the contacts plans based on the estimation of future communication episodes. The contact plan is then used for.
+
+229 "Yihan Zhu" (3494967552)
+01:11:18.320 --> 01:11:40.850
+Root computation in in the routing stage, in the routing stage, the contact graph dexture search algorithm is used to computer parts with the best delivery time in a contact graph, and the contact graph yes algorithm is used to computer the best in the contact plan. All computer parts.
+
+230 "Yihan Zhu" (3494967552)
+01:11:40.850 --> 01:11:59.910
+Sources are recorded in the, in the routing table for further use in the following stage. In the following stage, a four step filtering process is utilized to generate a candidate routing table selecting a route based on the following criteria.
+
+231 "Yihan Zhu" (3494967552)
+01:11:59.910 --> 01:12:16.410
+When creating the forwarding table by replacing the EID with the SID, we can obtain the segment list that we need to compute. The next one.
+
+232 "Yihan Zhu" (3494967552)
+01:12:16.410 --> 01:12:35.700
+Hi, However, with the continuous development of lunar exploration programs and the deep space exploration, the scale and applic applications of deep space networks are increasingly resembling the IP centric internet.
+
+233 "Yihan Zhu" (3494967552)
+01:12:35.700 --> 01:12:55.700
+The Lunar exploration network involves not only remote, not only remote sensing data transmission address by DTM, but also includes astronautro ground communication, human machine communication and machine to machine communication within lunar sensor network.
+
+234 "Yihan Zhu" (3494967552)
+01:12:55.700 --> 01:12:57.720
+It works.
+
+235 "Yihan Zhu" (3494967552)
+01:12:57.720 --> 01:13:17.720
+On the next one. SRV six technology enables IPv six networks to be programmable allowing them to meet more complex and flexible communication requirements. To address the growing service demands for deep of deep space networks, the design philosophy for next generation deep space network.
+
+236 "Yihan Zhu" (3494967552)
+01:13:17.720 --> 01:13:34.560
+Architecture includes number one support for large networks. Number number two scalability. Number three open interconnectivity, number four resilience.
+
+237 "Yihan Zhu" (3494967552)
+01:13:34.560 --> 01:13:54.560
+Number five programmability, number six, simplified protocol stack and then number seven automation. Again, this backdrop we propose IPV six network architecture for deep space, which includes IPv six SRV six ICMP.
+
+238 "Yihan Zhu" (3494967552)
+01:13:54.560 --> 01:14:13.620
+V six quick and the CGR and the last one and the future exploration network will use IPV six plus deep space network architecture to achieve integrated.
+
+239 "Yihan Zhu" (3494967552)
+01:14:13.620 --> 01:14:29.910
+The connectivity between earth and space, lunar lenders, rubbers, intellig intelligent rubbers, astronauts, orbitters and various remote sensing and the telemetry devices will be interconnected with using IPv six.
+
+240 "Yihan Zhu" (3494967552)
+01:14:29.910 --> 01:14:46.455
+Really sunnice and ground stations between earth and Moon will utilize only in house quick and SRV six to transmit virus data. And that's all for my presentation.
+
+241 "Side Meeting2" (1216604928)
+01:14:46.455 --> 01:15:00.212
+Thank you very much. Questions, Donny? Yeah I'm still confused. Why do we wanna use source routing in a highly dynamic topology?
+
+242 "Yihan Zhu" (3494967552)
+01:15:00.212 --> 01:15:12.967
+Do you mean how to use SRV six to.
+
+243 "Side Meeting2" (1216604928)
+01:15:12.967 --> 01:15:35.914
+If we source route a packet and send it to a relay, and the relay mrs. a contact, and the packet now is sitting there waiting for a SID to come available that may not come available for seven days, and there's another relay that we could use, why wouldn't we use it? Why are we committing to a source routed path?
+
+244 "Sauli Kiviranta" (1169202944)
+01:15:35.914 --> 01:15:36.713
+When we don't.
+
+245 "Side Meeting2" (1216604928)
+01:15:37.612 --> 01:15:44.392
+It's going to work. Why not just use destination based forwarding?
+
+246 "johnson liu" (4118539520)
+01:15:55.518 --> 01:16:14.737
+Sorry, you ask that the solution how to determine that the communication and which one is the question?
+
+247 "Side Meeting2" (1216604928)
+01:16:14.737 --> 01:16:28.798
+My question is why we are bothering to compute a source path that might not work. It doesn't help anything.
+
+248 "johnson liu" (4118539520)
+01:16:28.798 --> 01:16:33.437
+What doesn't work?
+
+249 "Side Meeting2" (1216604928)
+01:16:33.437 --> 01:16:52.590
+The topology that we have at any given moment may not be the one that's in effect minutes, hours or days later. So if you source route something and commit to a particular path, and the contact doesn't show up for whatever reason.
+
+250 "Side Meeting2" (1216604928)
+01:16:52.590 --> 01:17:10.620
+Say dust cloud solar storm, then you miss your contact and that Sydney may not be directly deliverable. So do you not take the next available contact? And if you have the next available contact.
+
+251 "Side Meeting2" (1216604928)
+01:17:10.620 --> 01:17:33.432
+Then why not just use destination based forwarding? And to add one more complexity, the source may not be able to be in contact with where the, the outgoing packet is sitting either because they're now in between both places and there's NO way for the source to contact the router, either.
+
+252 "Kanglian" (1369727744)
+01:17:33.432 --> 01:17:39.053
+Hello? Hello.
+
+253 "Side Meeting2" (1216604928)
+01:17:39.053 --> 01:17:41.492
+Can can you hear me? Yes, go ahead.
+
+254 "Kanglian" (1369727744)
+01:17:41.492 --> 01:17:56.972
+Yes. So if you go to to to read about DTN so in CGR it's based on the contact graph, the contact plans. So it's also kind of source routing because in in.
+
+255 "Side Meeting2" (1216604928)
+01:17:56.972 --> 01:18:11.636
+In the deep space already you have the nothing in common. That's giving you a path at one point in time. Yes, that's true. But what it's doing is giving is forwarding based on a destination.
+
+256 "Kanglian" (1369727744)
+01:18:11.636 --> 01:18:16.716
+Yes?
+
+257 "Side Meeting2" (1216604928)
+01:18:16.716 --> 01:18:19.474
+Active.
+
+258 "Kanglian" (1369727744)
+01:18:19.474 --> 01:18:31.742
+Yes, the, but the reason is you can still do the the distributed the the routing in in the in the middle one.
+
+259 "Side Meeting2" (1216604928)
+01:18:31.742 --> 01:18:36.617
+That doesn't matter. If you're gonna do routing in the middle, then why did you bother with source routing.
+
+260 "Kanglian" (1369727744)
+01:18:36.617 --> 01:18:42.821
+To waste time. No, because you can use the the contact plans which is.
+
+261 "Side Meeting2" (1216604928)
+01:18:42.821 --> 01:18:48.804
+Are they there? You had the contact graph. That's great. That told you where your 1st next hop.
+
+262 "Kanglian" (1369727744)
+01:18:48.804 --> 01:18:50.985
+Is.
+
+263 "Side Meeting2" (1216604928)
+01:18:50.985 --> 01:19:00.542
+Sorry, the contact graph gives you the 1st and next hop. After that it seems like destination based routing.
+
+264 "Kanglian" (1369727744)
+01:19:00.542 --> 01:19:03.565
+Oh.
+
+265 "johnson liu" (4118539520)
+01:19:03.565 --> 01:19:23.430
+Sorry because the destination maybe at the station, right? You always you use the data from to us. So the destination maybe always with the station.
+
+266 "johnson liu" (4118539520)
+01:19:23.430 --> 01:19:43.430
+So from the from the source in the moon such as to the station, the ground station, there will always have a contact so you can build the time of power.
+
+267 "johnson liu" (4118539520)
+01:19:43.430 --> 01:20:06.170
+From the station. So you, you load the source and load the destination. So you can use the contact to communication the path, maybe the path is different from time to time, but the source and the end it.
+
+268 "johnson liu" (4118539520)
+01:20:06.170 --> 01:20:13.414
+Is you you load the two endpoint points.
+
+269 "Side Meeting2" (1216604928)
+01:20:13.414 --> 01:20:25.210
+Again, the entry points are not the The question is, what are you gonna have and if in the topology in the middle changes while you're in flight and you've committed to a source route?
+
+270 "Marshall Eubanks" (1603073536)
+01:20:25.210 --> 01:20:43.553
+This, this just this presentation seemed very lunar centric and all of this seems pretty reasonable to me for the moon, where the flight times are 2nd 1.32 s. So you're not likely to have big changes in the middle. And if you do, you can adjust.
+
+271 "Side Meeting2" (1216604928)
+01:20:43.553 --> 01:20:51.551
+Okay, so even if it's we're talking lunar, then why do we need SR?
+
+272 "Marshall Eubanks" (1603073536)
+01:20:51.551 --> 01:20:55.185
+And why do you need it on earth?
+
+273 "Side Meeting2" (1216604928)
+01:20:55.185 --> 01:20:56.400
+Okay.
+
+274 "Side Meeting2" (1216604928)
+01:20:56.400 --> 01:21:15.874
+Well, I don't, but you know, the only, only time we want to do this is if we're doing traffic engineering, ok? And I think it's well known, my preference is for doing traffic engineering and they don't involve the IPV six.
+
+275 "johnson liu" (4118539520)
+01:21:15.874 --> 01:21:36.470
+Yeah, you can think about the BP. Why BP because store the package, right? You also, you also can ask how BP to to create a path from from my end to to.
+
+276 "johnson liu" (4118539520)
+01:21:36.470 --> 01:21:46.694
+To the to the destination. This is the same but every six is more simple than BP and that's all.
+
+277 "Side Meeting2" (1216604928)
+01:21:46.694 --> 01:21:57.870
+No idea. So I think we've agreed that BP is out of charter? It's not BP, it was TE pronunciations. Oh I said B.
+
+278 "Side Meeting2" (1216604928)
+01:21:57.870 --> 01:22:17.870
+Any other question I have maybe a comment or question that I already sent to Ian, your quick test are.
+
+279 "Side Meeting2" (1216604928)
+01:22:17.870 --> 01:22:37.080
+It would be good if you actually do the tests following the quick profile that that was posted and see if you have different results. My take is yes because there's different, you know, ways of doing especially for the congestion controller. So I would suggest that you try.
+
+280 "Side Meeting2" (1216604928)
+01:22:37.080 --> 01:22:57.080
+Following the quick profile and see if you have different results. Any other questions or comments? I think we're done. Last thing for working group forming.
+
+281 "Side Meeting2" (1216604928)
+01:22:57.080 --> 01:23:23.611
+Of on that subject is Thursday one oh 1aM1pM sorry in one room I don't remember. So Thursday 01:00 P.M. Dublin time and you're really invited to come to the buff and thank you very much for taking the time here. Closing the the meeting.
+
+282 "Marshall Eubanks" (1603073536)
+01:23:23.611 --> 01:23:32.928
+Thank you. Take care.
