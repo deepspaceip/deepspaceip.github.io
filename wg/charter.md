@@ -6,10 +6,11 @@ Deploying IP networks on the surfaces of celestial bodies, such as the Moon or M
 Given the delays and disruptions involved in space communications, protocols may have to be profiled or extended to operate efficiently in this environment. While lunar networking is the first planned deployment of this work, the solutions should support communication with Mars.
 
 This working group will work on the following items:
-Description of the key characteristics, use cases, and requirements that make the space environment unique. 
-Documentation of the necessary differences that apply to the IP architecture when considering space networking compared to terrestrial IP use. 
-A profile for the QUIC transport protocol that enables efficient end-to-end use of QUIC in space. Given that TLS is an integral component of QUIC, considerations for the use of TLS are also in scope.
-Considerations for the deployment of DNS will be documented, given the often disconnected nature of space networks.
+
+* Description of the key characteristics, use cases, and requirements that make the space environment unique. 
+* Documentation of the necessary differences that apply to the IP architecture when considering space networking compared to terrestrial IP use. 
+* A profile for the QUIC transport protocol that enables efficient end-to-end use of QUIC in space. Given that TLS is an integral component of QUIC, considerations for the use of TLS are also in scope.
+* Considerations for the deployment of DNS will be documented, given the often disconnected nature of space networks.
 
 The Bundle Protocol (BP) and the operation of LEO, MEO, and GEO constellations are out of scope for this WG.
 
