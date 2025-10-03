@@ -3,6 +3,15 @@
 This initiative is about using the Internet Protocol (IP) suite for deep space, as described in this [IETF draft](https://datatracker.ietf.org/doc/draft-many-tiptop-ip-architecture/).  It is an alternative to the use of the [Bundle Protocol](https://datatracker.ietf.org/doc/rfc9171/) to create a network in deep space.
 
 
+# Specifications
+- [IP in Deep Space: Key Characteristics, Use Cases and Requirements](https://datatracker.ietf.org/doc/draft-ietf-tiptop-usecase/)
+- [The IP Protocol Stack in Deep Space: Architecture](https://datatracker.ietf.org/doc/draft-many-tiptop-ip-architecture/)
+- [QUIC Profile for Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-quic-profile/)
+- [QUIC in Space](https://datatracker.ietf.org/doc/draft-huitema-quic-in-space/)
+- [Deployment and Use of the Domain Name System(DNS) in Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-dns)
+- [Deploying and Using Email in Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-email)
+- [CoAP in Space](https://datatracker.ietf.org/doc/draft-gomez-tiptop-coap/)
+
 # Discussion
 
 A Discord channel is used by the community for interactive discussions and support. Send an email to [info@deepspaceip.net](mailto:info@deepspaceip.net) to receive an invite.
@@ -15,19 +24,9 @@ Discussions about the specifications are happening on the IETF deepspace/tiptop 
 # Hackathons and Experiments
 - [IETF 124 Montréal Experiment](meetings/ietf124/README.md)
 
-
-# Specifications
-- [IP in Deep Space: Key Characteristics, Use Cases and Requirements](https://datatracker.ietf.org/doc/draft-ietf-tiptop-usecase/)
-- [The IP Protocol Stack in Deep Space: Architecture](https://datatracker.ietf.org/doc/draft-many-tiptop-ip-architecture/)
-- [QUIC Profile for Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-quic-profile/)
-- [QUIC in Space](https://datatracker.ietf.org/doc/draft-huitema-quic-in-space/)
-- [Deployment and Use of the Domain Name System(DNS) in Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-dns)
-- [Deploying and Using Email in Deep Space](https://datatracker.ietf.org/doc/draft-many-tiptop-email)
-- [CoAP in Space](https://datatracker.ietf.org/doc/draft-gomez-tiptop-coap/)
-
 # Additional Documentation and Presentations
 
-- 2025-10-03 International Astronautical Congress(IAC): [paper](papers/deepspace-ip-iac-sydney-20251003-paper.pdf), [presentation](papers/deepspace-ip-iac-sydney-20251003-presentation.pdf)
+- 2025-10-03 International Astronautical Congress(IAC) 2025, Sydney, AU: [paper](papers/deepspace-ip-iac-sydney-20251003-paper.pdf), [presentation](papers/deepspace-ip-iac-sydney-20251003-presentation.pdf)
 - 2025-06-20 [Internet Society: Using the IP Protocol Suite for Deep Space Networking – TIPTOP WG](https://www.youtube.com/watch?v=5xNULP2Dq4c)
 - 2024-12-19 [AFNIC: La suite du protocole Internet dans l’espace (JCSA24)](https://www.youtube.com/watch?v=O2dIowVrIhI&t=3s)
 - 2024-10-12 [Flight Software Workshop: Using the IP Protocol Suite for Applications in Deep Space](https://www.youtube.com/watch?v=GC3NZh0GkKQ)
