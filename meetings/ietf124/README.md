@@ -30,10 +30,17 @@ Each orbiter (one for Moon, one for Mars) is implemented as follows:
 - using netem, adding a 2 second or 4 minute one-way delay to Moon or Mars respectively
 - putting the outgoing interface, facing the rover, down every 15 minutes, for 15 minutes; so interface is up from XX:00 to XX:14:59 and down from XX:15 to XX:29:59, up from XX:30 to XX:444:59 and down from XX:45 to XX:59.
 
-The equivalent networks are shown for Moon:![Moon](earth-relay-mars-rover-moon-functional.png) 
+The equivalent networks are shown for Moon:
+
+
+![Moon](earth-relay-mars-rover-moon-functional.png) 
 
 and Mars:
+
+
+
  ![Mars](earth-relay-mars-rover-mars-functional.png)
+
 
 The Moon (moon.viagenie.ca/216.128.183.138) and Mars (mars.viagenie.ca/216.128.181.1) assets are implemented as VMs on the other side of the routers, with QUIC servers answering on port 4443,  configured based on their respective expected delays and intermittence. They also run other services as described in the following sections.
 
