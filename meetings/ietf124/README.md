@@ -120,7 +120,7 @@ If you need to install snmp, you may want to go back to the IETF standard networ
 Then:
 
 - switch to ietf-moon SSID
-- `snmpget -v 1 -c public 216.128.183.138 -t 910 1.3.6.1.2.1.1.3.0` 
+- `snmpget -v 1 -c public -t 910 216.128.183.138 1.3.6.1.2.1.1.3.0` 
 
 Note the use of -t 910 to specify the timeout value for the response.
 
