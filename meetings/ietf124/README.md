@@ -53,7 +53,7 @@ As discussed in the [QUIC profile draft](https://datatracker.ietf.org/doc/draft-
 
 ### Things to Test
 
-As discussed above, most transport and applications timers, on both client and servers, have to be configured for the expected delays. You are free and encouraged to experiment with non-configured clients on your laptop, and servers on Internet, to see if they work or not (spoiler: most won't as is). Instructions on how to test space profiled/configured QUIC stacks for HTTP and others are provided below for testing.
+As discussed above, most transport and applications timers, on both client and servers, have to be configured for the expected delays. You are free and encouraged to experiment with non-configured clients on your laptop, and servers on Internet, to see if they work or not (spoiler: most won't as is). It should be noted that space missions do not expect to use typical Internet applications. Instructions on how to test space profiled/configured QUIC stacks for HTTP and others are provided below for testing.
 
 When using this experiment SSIDs (ietf-moon, ietf-mars), they will introduce significant delays, on purpose. During this experiment, you may need to install some open-source software or doing normal work, where the apps on your laptop will timeout and may say that you are not connected on the Internet. Switch back to the IETF network SSID in this case.
 
