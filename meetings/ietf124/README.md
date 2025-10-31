@@ -70,12 +70,24 @@ Therefore, these implementations should be used for testing, as documented in [D
 
 ### What to install and run on your laptop
 
+#### Ping
+To confirm your laptop is on the right network, do the following:
+
+- switch to the `ietf-moon` SSID
+- `ping -W 5 -c 2 216.128.183.138`
+- wait about 4 seconds for the first reply
+- switch to the `ietf-mars` SSID
+- `ping -W 500 -c 2 216.128.181.1`
+- wait about 8 minutes for the first reply
+
+The -W argument specifies the time to wait for the response.
+
 #### HTTP And QUIC
 This setup was tested on Ubuntu and MacOSX. It is expected to run on any Linux distro. It uses the Rust toolchain, so make sure to [install it](https://rustup.rs). 
 
 The setup will send a basic HTTP query over QUIC to space configured servers simulating Moon and Mars assets.
 
-- on the main IETF network (to avoid delays when using the experiment SSIDs)
+- switch to the main IETF network (ietf or ietf-dual-stack SSIDs), unless you want to install software over long delays!
 - `git clone https://github.com/deepspaceip/dipt-http.git`
 - `cd dipt-http`
 - Choose whether you want to test with the Quinn or Quiche QUIC stack. See the README in their respective sub-directory and follow the instructions. The following assumes Quinn.
@@ -124,7 +136,7 @@ Some early investigation for those protocols was done before. Would love to get 
 
 
 ### DNS
-DNS can be used in deep space with proper pre-caching setup, as described in [draft-many-tiptop-dns](https://datatracker.ietf.org/doc/draft-many-tiptop-dns/). For this hackathon, no DNS pre-caching was setup, so IP addresses were used. DNS pre-caching will be deployed in future hackathons.
+DNS can be used in deep space with proper pre-caching setup, as described in [draft-many-tiptop-dns](https://datatracker.ietf.org/doc/draft-many-tiptop-dns/). For this hackathon, no DNS pre-caching was setup, so IP addresses are used. DNS pre-caching will be deployed in future hackathons.
 
 ### IPv4 vs IPv6
 To focus on the actual issues at hand (deepspace delays), the use of a single IP version is used. Given that some of the volunteers are remote and access the mini-pc remotely from their home IPv4-only network, only IPv4 is used in this experiment :( . However, the setup has been tested for IPv6 successfully, and dual-stack will be deployed in future hackathons. Dual-stack will also enable testing possible issues (happy eyeballs come to mind) with dual-stacks in those networks. 
