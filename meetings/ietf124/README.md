@@ -74,13 +74,13 @@ Therefore, these implementations should be used for testing, as documented in [D
 To confirm your laptop is on the right network, do the following:
 
 - switch to the `ietf-moon` SSID
-- `ping -W 5 -c 2 216.128.183.138`
-- wait about 4 seconds for the first reply
+- `ping -W 5000 -c 2 216.128.183.138`
+- wait about 5 seconds for the first reply
 - switch to the `ietf-mars` SSID
-- `ping -W 500 -c 2 216.128.181.1`
+- `ping -W 500000 -c 2 216.128.181.1`
 - wait about 8 minutes for the first reply
 
-The -W argument specifies the time to wait for the response.
+The -W argument specifies the time in ms to wait for the response.
 
 #### HTTP And QUIC
 This setup was tested on Ubuntu and MacOSX. It is expected to run on any Linux distro. It uses the Rust toolchain, so make sure to [install it](https://rustup.rs). 
