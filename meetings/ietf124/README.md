@@ -42,7 +42,7 @@ and Mars:
  ![Mars](earth-relay-mars-rover-mars-functional.png)
 
 
-The Moon (moon.viagenie.ca/216.128.183.138) and Mars (mars.viagenie.ca/216.128.181.1) assets are implemented as VMs on the other side of the routers, with QUIC servers answering on port 4443,  configured based on their respective expected delays and intermittence. They also run other services as described in the following sections.
+The Moon (moon.viagenie.ca/216.128.183.138) and Mars (mars.viagenie.ca/2001:19f0:b002:01c7:5400:05ff:feab:a583) assets are implemented as VMs on the other side of the routers, with QUIC servers answering on port 4443,  configured based on their respective expected delays and intermittence. They also run other services as described in the following sections.
 
 While the use of the provided assets are suggested for testing, one can use any server on the Internet, which is on the other side of the routers, to verify, test or configure appropriately for delays. Note that without being configured for deepspace delays, they may time out or do excessive retransmissions. You are encouraged to test your implementation or any implementation on your servers and clients and see how the protocol and implementations behave.
 
@@ -77,7 +77,7 @@ To confirm your laptop is on the right network, do the following:
 - `ping -W 5 -c 2 216.128.183.138`
 - wait about 5 seconds for the first reply
 - switch to the `ietf-mars` SSID
-- `ping -W 500 -c 2 216.128.181.1`
+- `ping6 -W 500 -c 2 2001:19f0:b002:01c7:5400:05ff:feab:a583`
 - wait about 8 minutes for the first reply
 
 The -W argument specifies the time to wait for the response. Note that on Linux, the unit is seconds, while on MacOSX the unit is in milliseconds. :(
@@ -95,7 +95,7 @@ The setup will send a basic HTTP query over QUIC to space configured servers sim
 - Compile and test before switching to the ietf-moon SSID network
   - `cargo run --release --bin client -- --no-verify --maxrtt 910 --cc noop https://216.128.183.138:4443/index.html`
 - switch to `ietf-moon` SSID and then redo a get to the Moon asset: `cargo run --release --bin client -- --no-verify --maxrtt 910 --cc noop https://216.128.183.138:4443/index.html`
-- switch to `ietf-mars` SSID and then do a get to the Mars asset: `cargo run --release --bin client -- --no-verify --maxrtt 1390 --cc noop https://216.128.181.1:4443/index.html`
+- switch to `ietf-mars` SSID and then do a get to the Mars asset: `cargo run --release --bin client -- --no-verify --maxrtt 1390 --cc noop https://[2001:19f0:b002:01c7:5400:05ff:feab:a583]:4443/index.html`
 
 The `--maxrtt` argument is based on the expected maximum RTT to the target asset. It is used internally to set the initial_rtt and max_idle_timeout transport connection configuration parameters. For moon, 15 minute intermittence (15 x 60s = 900 seconds) and 2x2 seconds means 904 seconds, so 910 for some leaway. Similarly, Mars is 15 minute intermittence and 2x4 minutes means 1390 seconds. The `--cc` sets the congestion controller to the noop one. The `--no-verify` tells the client to not verify the TLS certificate, as it is a self-signed one on the server side.
 
@@ -139,7 +139,7 @@ Some early investigation for those protocols was done before. Would love to get 
 DNS can be used in deep space with proper pre-caching setup, as described in [draft-many-tiptop-dns](https://datatracker.ietf.org/doc/draft-many-tiptop-dns/). For this hackathon, no DNS pre-caching was setup, so IP addresses are used. DNS pre-caching will be deployed in future hackathons.
 
 ### IPv4 vs IPv6
-To focus on the actual issues at hand (deepspace delays), the use of a single IP version is used. Given that some of the volunteers are remote and access the mini-pc remotely from their home IPv4-only network, only IPv4 is used in this experiment :( . However, the setup has been tested for IPv6 successfully, and dual-stack will be deployed in future hackathons. Dual-stack will also enable testing possible issues (happy eyeballs come to mind) with dual-stacks in those networks. 
+To focus on the actual issues at hand (deepspace delays), the use of a single IP version per network is used. To demonstrate that both IPv4 and IPv6 can be used without a difference, `ietf-moon` is an IPv4-only network, while `ietf-mars` is an IPv6-only network. Dual-stack will be deployed in future hackathons. Dual-stack will also enable testing possible issues (happy eyeballs come to mind) with dual-stacks in those networks. 
 
 ### Caveats
 The IP packet storage implementation used in the forwarders is a prototype. It was not specifically designed to handle large amount of simultaneous trafic. So it is expected to have bugs, to die on big load or else. We will monitor it. Please report any issue. 
